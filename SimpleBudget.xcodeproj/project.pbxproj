@@ -15,6 +15,8 @@
 		F9160C91221531B400E28C71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9160C8F221531B400E28C71 /* LaunchScreen.storyboard */; };
 		F9160C9C221531B400E28C71 /* SimpleBudgetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9160C9B221531B400E28C71 /* SimpleBudgetTests.swift */; };
 		F9160CA7221531B400E28C71 /* SimpleBudgetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9160CA6221531B400E28C71 /* SimpleBudgetUITests.swift */; };
+		F9160CB52215487D00E28C71 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9160CB42215487D00E28C71 /* ThirdViewController.swift */; };
+		F951F0112216B36C003709EA /* Cost.swift in Sources */ = {isa = PBXBuildFile; fileRef = F951F0102216B36C003709EA /* Cost.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		F9160CA2221531B400E28C71 /* SimpleBudgetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleBudgetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9160CA6221531B400E28C71 /* SimpleBudgetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleBudgetUITests.swift; sourceTree = "<group>"; };
 		F9160CA8221531B400E28C71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9160CB42215487D00E28C71 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		F951F0102216B36C003709EA /* Cost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cost.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				F9160C84221531B300E28C71 /* AppDelegate.swift */,
 				F9160C86221531B300E28C71 /* FirstViewController.swift */,
 				F9160C88221531B300E28C71 /* SecondViewController.swift */,
+				F9160CB42215487D00E28C71 /* ThirdViewController.swift */,
+				F951F0102216B36C003709EA /* Cost.swift */,
 				F9160C8A221531B300E28C71 /* Main.storyboard */,
 				F9160C8D221531B400E28C71 /* Assets.xcassets */,
 				F9160C8F221531B400E28C71 /* LaunchScreen.storyboard */,
@@ -261,6 +267,8 @@
 			files = (
 				F9160C89221531B300E28C71 /* SecondViewController.swift in Sources */,
 				F9160C85221531B300E28C71 /* AppDelegate.swift in Sources */,
+				F9160CB52215487D00E28C71 /* ThirdViewController.swift in Sources */,
+				F951F0112216B36C003709EA /* Cost.swift in Sources */,
 				F9160C87221531B300E28C71 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
