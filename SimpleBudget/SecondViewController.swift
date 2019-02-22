@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class SecondViewController: UIViewController {
 
@@ -15,6 +16,16 @@ class SecondViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    @IBAction func test(_ sender: UIButton) {
+        let request: NSFetchRequest<Cost> = Cost.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "amount", ascending: true)]
+//        request.predicate = NSPredicate(format: "any")
+        let context = AppDelegate.viewContext
+        let toPrint = try? context.fetch(request)
+        for eachCost in toPrint ?? [] {
+            print(eachCost.amount)
+        }
+    }
+    
 }
 
