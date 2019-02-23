@@ -135,19 +135,117 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9QD-aS-4NJ">
-                                <rect key="frame" x="118" y="204" width="192" height="166"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kq2-TX-On2">
+                                <rect key="frame" x="0.0" y="43.5" width="375" height="574.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellContent" id="Mws-eC-gxa" customClass="BudgetAndCostTableViewCell" customModule="SimpleBudget" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mws-eC-gxa" id="DAC-I0-zl6">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="fgT-et-sQz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBi-hc-wJm">
+                                                            <rect key="frame" x="0.0" y="0.0" width="85" height="43.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Budget" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsM-fl-b6s">
+                                                            <rect key="frame" x="97" y="0.0" width="84.5" height="43.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIn-rP-QnJ">
+                                                            <rect key="frame" x="193.5" y="0.0" width="85" height="43.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difference" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwa-DB-0ft">
+                                                            <rect key="frame" x="290.5" y="0.0" width="84.5" height="43.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="fgT-et-sQz" secondAttribute="trailing" id="1KA-kp-225"/>
+                                                <constraint firstItem="fgT-et-sQz" firstAttribute="leading" secondItem="DAC-I0-zl6" secondAttribute="leading" id="1nX-ad-7EV"/>
+                                                <constraint firstAttribute="bottom" secondItem="fgT-et-sQz" secondAttribute="bottom" id="3S3-NK-2H3"/>
+                                                <constraint firstItem="fgT-et-sQz" firstAttribute="top" secondItem="DAC-I0-zl6" secondAttribute="top" id="QuV-cZ-Q1k"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="budget" destination="dsM-fl-b6s" id="oBr-2U-kjT"/>
+                                            <outlet property="category" destination="dsM-fl-b6s" id="pjK-BO-XB8"/>
+                                            <outlet property="cost" destination="mIn-rP-QnJ" id="aBh-pp-F6p"/>
+                                            <outlet property="difference" destination="nwa-DB-0ft" id="rWu-mh-vSx"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
                                 <connections>
-                                    <action selector="test:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="jYu-bV-0pa"/>
+                                    <outlet property="dataSource" destination="8rJ-Kc-sve" id="AkR-P7-vkZ"/>
+                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="eFj-LZ-U6R"/>
                                 </connections>
-                            </button>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="D3h-Wc-Tm9">
+                                <rect key="frame" x="0.0" y="20" width="375" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKw-im-bsY">
+                                        <rect key="frame" x="0.0" y="0.0" width="85" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Budget" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOG-5c-uXo">
+                                        <rect key="frame" x="97" y="0.0" width="84.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEl-gv-8J7">
+                                        <rect key="frame" x="193.5" y="0.0" width="85" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difference" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9Z-QB-yOi">
+                                        <rect key="frame" x="290.5" y="0.0" width="84.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20.5" id="B18-ut-D5Y"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="D3h-Wc-Tm9" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="7YN-Cs-CgJ"/>
+                            <constraint firstItem="Kq2-TX-On2" firstAttribute="bottom" secondItem="O1u-W8-tvY" secondAttribute="bottom" id="DMN-ax-y18"/>
+                            <constraint firstItem="Kq2-TX-On2" firstAttribute="top" secondItem="D3h-Wc-Tm9" secondAttribute="bottom" constant="3" id="Gdn-fU-Tov"/>
+                            <constraint firstItem="Kq2-TX-On2" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="Gxt-Av-SKM"/>
+                            <constraint firstItem="Kq2-TX-On2" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="Zes-RE-Dxb"/>
+                            <constraint firstItem="D3h-Wc-Tm9" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="hxQ-Nh-X2w"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="D3h-Wc-Tm9" secondAttribute="trailing" id="pJ6-VW-cjJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Budget" image="second" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="budgetTableView" destination="Kq2-TX-On2" id="u3J-vg-b3T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>

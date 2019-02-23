@@ -18,6 +18,9 @@
 		F9160CB52215487D00E28C71 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9160CB42215487D00E28C71 /* ThirdViewController.swift */; };
 		F93AC03B2220268D0040AFD8 /* CoreDataFile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F93ACF6122194845005DBAFD /* CoreDataFile.xcdatamodeld */; };
 		F93ACFA52219585B005DBAFD /* Cost.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93ACFA32219585B005DBAFD /* Cost.swift */; };
+		F99DB8BE22211DB30082F141 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99DB8BD22211DB30082F141 /* Budget.swift */; };
+		F99DB8C022212DD00082F141 /* BudgetAndCostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99DB8BF22212DD00082F141 /* BudgetAndCostTableViewCell.swift */; };
+		F99DB8C2222133DA0082F141 /* BudgetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99DB8C1222133DA0082F141 /* BudgetTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		F9160CB42215487D00E28C71 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		F93ACF6222194845005DBAFD /* CoreDataFile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataFile.xcdatamodel; sourceTree = "<group>"; };
 		F93ACFA32219585B005DBAFD /* Cost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cost.swift; sourceTree = "<group>"; };
+		F99DB8BD22211DB30082F141 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
+		F99DB8BF22212DD00082F141 /* BudgetAndCostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetAndCostTableViewCell.swift; sourceTree = "<group>"; };
+		F99DB8C1222133DA0082F141 /* BudgetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,14 +111,16 @@
 		F9160C83221531B300E28C71 /* SimpleBudget */ = {
 			isa = PBXGroup;
 			children = (
-				F9160C84221531B300E28C71 /* AppDelegate.swift */,
+				F93AC03F222102A90040AFD8 /* Supporting Files */,
 				F9160C86221531B300E28C71 /* FirstViewController.swift */,
 				F9160C88221531B300E28C71 /* SecondViewController.swift */,
 				F9160CB42215487D00E28C71 /* ThirdViewController.swift */,
 				F93ACFA32219585B005DBAFD /* Cost.swift */,
+				F99DB8BD22211DB30082F141 /* Budget.swift */,
+				F99DB8C1222133DA0082F141 /* BudgetTableViewController.swift */,
+				F99DB8BF22212DD00082F141 /* BudgetAndCostTableViewCell.swift */,
 				F9160C8A221531B300E28C71 /* Main.storyboard */,
 				F9160C8D221531B400E28C71 /* Assets.xcassets */,
-				F9160C8F221531B400E28C71 /* LaunchScreen.storyboard */,
 				F9160C92221531B400E28C71 /* Info.plist */,
 				F93ACF6122194845005DBAFD /* CoreDataFile.xcdatamodeld */,
 			);
@@ -135,6 +143,15 @@
 				F9160CA8221531B400E28C71 /* Info.plist */,
 			);
 			path = SimpleBudgetUITests;
+			sourceTree = "<group>";
+		};
+		F93AC03F222102A90040AFD8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F9160C84221531B300E28C71 /* AppDelegate.swift */,
+				F9160C8F221531B400E28C71 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,11 +285,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F99DB8C2222133DA0082F141 /* BudgetTableViewController.swift in Sources */,
 				F93AC03B2220268D0040AFD8 /* CoreDataFile.xcdatamodeld in Sources */,
 				F93ACFA52219585B005DBAFD /* Cost.swift in Sources */,
+				F99DB8C022212DD00082F141 /* BudgetAndCostTableViewCell.swift in Sources */,
 				F9160C89221531B300E28C71 /* SecondViewController.swift in Sources */,
 				F9160C85221531B300E28C71 /* AppDelegate.swift in Sources */,
 				F9160CB52215487D00E28C71 /* ThirdViewController.swift in Sources */,
+				F99DB8BE22211DB30082F141 /* Budget.swift in Sources */,
 				F9160C87221531B300E28C71 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
