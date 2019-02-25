@@ -10,11 +10,7 @@ import UIKit
 import CoreData
 
 class CategoriesSettingTableViewController: UITableViewController {
-    private var categories = [String]() {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+    private var categories = [Category]()
     
     private var context = AppDelegate.viewContext
 
@@ -36,7 +32,7 @@ class CategoriesSettingTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoriesCell", for: indexPath)
-        cell.textLabel?.text = categories[indexPath.row]
+        cell.textLabel?.text = categories[indexPath.row].name
         return cell
     }
     
@@ -62,17 +58,22 @@ class CategoriesSettingTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            let category = categories[indexPath.row]
+            // Delete from datasource
+            context.delete(category)
+            // Delete from category
+            categories.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            try? context.save()
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
@@ -99,24 +100,27 @@ class CategoriesSettingTableViewController: UITableViewController {
     }
     */
     private func addCategory(name:String) {
-        let category = Category(context: context)
         if name != "" {
-            if !categories.contains(name) {
+                let category = Category(context: context)
                 category.name = name
-                categories += [name]
-                try? context.save()
-            }
+                do
+                {try context.save()
+                } catch {
+                    print("addCategory content saving failed")
+                }
+                categories += [category]
+                tableView.reloadData()
         }
     }
     
-    private func loadCategories() -> [String]{
+    private func loadCategories() -> [Category]{
         let request: NSFetchRequest<Category> = Category.fetchRequest()
 //        request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: false)]
 //        request.predicate = NSPredicate(format: "amount > %@", "0")
 //        let context = AppDelegate.viewContext
         let result = try? context.fetch(request)
         for category in (result ?? []) {
-            categories.append(category.name ?? "")
+            categories.append(category)
         }
         return categories
     }

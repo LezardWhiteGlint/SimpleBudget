@@ -18,16 +18,30 @@ class BookKeepingViewController: UIViewController, UITextFieldDelegate, UIScroll
     @IBOutlet weak var amount: UITextField!
     @IBOutlet weak var reminder: UITextField!
     //Category contents
-    var categoryPickerDataSource = [String]() 
+    private var categoryPickerDataSource = [String]()
     
 //    private var container = AppDelegate.persistentContainer
     private var context = AppDelegate.viewContext
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         category.dataSource = self
         category.delegate = self
         categoryPickerDataSource = loadCategories()
+        //Set initial categories
+        if categoryPickerDataSource == [] {
+            categoryPickerDataSource = ["Housing","Food","Shopping","Other"]
+            for eachCategory in categoryPickerDataSource {
+                let category = Category(context: context)
+                category.name = eachCategory
+                do {
+                    try context.save()
+                } catch {
+                    print("Initial categories save failed")
+                }
+            }
+        }
     }
     
     //MARK: Delegations
@@ -45,6 +59,9 @@ class BookKeepingViewController: UIViewController, UITextFieldDelegate, UIScroll
         return categoryPickerDataSource[row]
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        updateCategory()
+    }
     
     //MARK: Actions
     @IBAction func Done(_ sender: Any) {
