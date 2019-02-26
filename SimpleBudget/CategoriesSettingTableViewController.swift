@@ -17,6 +17,10 @@ class CategoriesSettingTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         categories = loadCategories()
+        tableView.isEditing = true
+        for category in categories {
+            print(category.order)
+        }
     }
 
     // MARK: - Table view data source
@@ -75,12 +79,15 @@ class CategoriesSettingTableViewController: UITableViewController {
     }
     
 
-    /*
+    
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+        let switchCategories = loadCategories()
+        let temp = switchCategories[fromIndexPath.row].order
+        switchCategories[fromIndexPath.row].order = switchCategories[to.row].order
+        switchCategories[to.row].order = temp
     }
-    */
+    
 
     /*
     // Override to support conditional rearranging of the table view.
@@ -101,28 +108,32 @@ class CategoriesSettingTableViewController: UITableViewController {
     */
     private func addCategory(name:String) {
         if name != "" {
-                let category = Category(context: context)
-                category.name = name
-                do
-                {try context.save()
-                } catch {
-                    print("addCategory content saving failed")
-                }
-                categories += [category]
-                tableView.reloadData()
+            let category = Category(context: context)
+            category.name = name
+            //remember order
+            let lastOrder = loadCategories().last?.order
+            category.order = Int16(lastOrder ?? 20) + 1
+            do
+            {try context.save()
+            } catch {
+                print("addCategory content saving failed")
+            }
+            categories += [category]
+            tableView.reloadData()
         }
     }
     
     private func loadCategories() -> [Category]{
         let request: NSFetchRequest<Category> = Category.fetchRequest()
-//        request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: false)]
+        request.sortDescriptors = [NSSortDescriptor(key: "order", ascending: true)]
 //        request.predicate = NSPredicate(format: "amount > %@", "0")
 //        let context = AppDelegate.viewContext
+        var returnCategories = [Category]()
         let result = try? context.fetch(request)
         for category in (result ?? []) {
-            categories.append(category)
+            returnCategories.append(category)
         }
-        return categories
+        return returnCategories
     }
     
 

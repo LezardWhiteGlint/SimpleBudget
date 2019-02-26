@@ -32,14 +32,17 @@ class BookKeepingViewController: UIViewController, UITextFieldDelegate, UIScroll
         //Set initial categories
         if categoryPickerDataSource == [] {
             categoryPickerDataSource = ["Housing","Food","Shopping","Other"]
+            var orderToRemember = 1
             for eachCategory in categoryPickerDataSource {
                 let category = Category(context: context)
                 category.name = eachCategory
+                category.order = Int16(orderToRemember)
                 do {
                     try context.save()
                 } catch {
                     print("Initial categories save failed")
                 }
+                orderToRemember += 1
             }
         }
     }
@@ -91,7 +94,7 @@ class BookKeepingViewController: UIViewController, UITextFieldDelegate, UIScroll
     private func loadCategories() -> [String]{
         var categories = [String]()
         let request: NSFetchRequest<Category> = Category.fetchRequest()
-        //        request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: false)]
+                request.sortDescriptors = [NSSortDescriptor(key: "order", ascending: true)]
         //        request.predicate = NSPredicate(format: "amount > %@", "0")
         //        let context = AppDelegate.viewContext
         let result = try? context.fetch(request)
