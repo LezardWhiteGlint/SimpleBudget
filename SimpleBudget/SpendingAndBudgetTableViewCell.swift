@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BudgetAndCostTableViewCell: UITableViewCell {
+class SpendingAndBudgetTableViewCell: UITableViewCell {
     @IBOutlet weak var category: UILabel!
     @IBOutlet weak var budget: UILabel!
     @IBOutlet weak var cost: UILabel!

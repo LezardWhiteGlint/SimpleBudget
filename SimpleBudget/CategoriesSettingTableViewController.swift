@@ -49,11 +49,8 @@ class CategoriesSettingTableViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func goBack(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
-    }
-    
 
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -86,6 +83,7 @@ class CategoriesSettingTableViewController: UITableViewController {
         let temp = switchCategories[fromIndexPath.row].order
         switchCategories[fromIndexPath.row].order = switchCategories[to.row].order
         switchCategories[to.row].order = temp
+        try? context.save()
     }
     
 
@@ -112,7 +110,7 @@ class CategoriesSettingTableViewController: UITableViewController {
             category.name = name
             //remember order
             let lastOrder = loadCategories().last?.order
-            category.order = Int16(lastOrder ?? 20) + 1
+            category.order = Int32(lastOrder ?? 20) + 1
             do
             {try context.save()
             } catch {

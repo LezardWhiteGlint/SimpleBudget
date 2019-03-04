@@ -36,7 +36,7 @@ class BookKeepingViewController: UIViewController, UITextFieldDelegate, UIScroll
             for eachCategory in categoryPickerDataSource {
                 let category = Category(context: context)
                 category.name = eachCategory
-                category.order = Int16(orderToRemember)
+                category.order = Int32(orderToRemember)
                 do {
                     try context.save()
                 } catch {
