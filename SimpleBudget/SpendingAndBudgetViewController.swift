@@ -163,7 +163,7 @@ class SpendingAndBudgetViewController: UIViewController,UITableViewDelegate,UITa
     }
     
     private func getYearAndMonth(date:Date) -> Date {
-        let yearAndMonthComponent = calendar.dateComponents([.year,.month], from: currentDate)
+        let yearAndMonthComponent = calendar.dateComponents([.year,.month], from: date)
         return calendar.date(from: yearAndMonthComponent)!
     }
     

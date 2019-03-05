@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class BookKeepingViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate,UIPickerViewDelegate,UIPickerViewDataSource{
-
+    
     
     //MARK: Properties
     @IBOutlet weak var date: UIDatePicker!
@@ -20,7 +20,7 @@ class BookKeepingViewController: UIViewController, UITextFieldDelegate, UIScroll
     //Category contents
     private var categoryPickerDataSource = [String]()
     
-//    private var container = AppDelegate.persistentContainer
+    //    private var container = AppDelegate.persistentContainer
     private var context = AppDelegate.viewContext
     
     override func viewDidLoad()
@@ -48,7 +48,7 @@ class BookKeepingViewController: UIViewController, UITextFieldDelegate, UIScroll
     }
     
     //MARK: Delegations
-
+    
     //MARK: - UIPickerView Delegates
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -90,11 +90,11 @@ class BookKeepingViewController: UIViewController, UITextFieldDelegate, UIScroll
         categoryPickerDataSource = loadCategories()
         category.reloadAllComponents()
     }
-
+    
     private func loadCategories() -> [String]{
         var categories = [String]()
         let request: NSFetchRequest<Category> = Category.fetchRequest()
-                request.sortDescriptors = [NSSortDescriptor(key: "order", ascending: true)]
+        request.sortDescriptors = [NSSortDescriptor(key: "order", ascending: true)]
         //        request.predicate = NSPredicate(format: "amount > %@", "0")
         //        let context = AppDelegate.viewContext
         let result = try? context.fetch(request)
@@ -103,7 +103,7 @@ class BookKeepingViewController: UIViewController, UITextFieldDelegate, UIScroll
         }
         return categories
     }
-
-
+    
+    
 }
 

@@ -34,13 +34,12 @@ class SettingsTableViewController: UITableViewController {
 
     private func addSampleBudgetData() {
         let context = AppDelegate.viewContext
-        for category in ["Housing","Food","Shopping","Other"] {
-            let budget = Budget(context: context)
-            budget.amount = 10000
-            budget.date = Date()
-            budget.category = category
-            try? context.save()
-        }
+        let budget = Budget(context: context)
+        budget.amount = Double.random(in: 1000...10000)
+        budget.date = Date().addingTimeInterval(Double.random(in: 100000...100000000))
+        budget.category = String("qwertyuiopasdfghjklzxcvbnm1234567890".randomElement()!)
+        try? context.save()
+        
     }
 
 }

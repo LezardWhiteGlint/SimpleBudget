@@ -247,7 +247,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="gdW-gV-bma"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="mSJ-Hq-maU">
                             <connections>
-                                <segue destination="Qy5-6G-SRx" kind="show" id="Ote-vZ-j4A"/>
+                                <segue destination="Qy5-6G-SRx" kind="show" identifier="ShowBudgetSummary" id="Ote-vZ-j4A"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -268,12 +268,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BudgetSummaryCell" id="vdO-Y4-7tt">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BudgetSummaryDateCell" textLabel="Qya-34-fKN" style="IBUITableViewCellStyleDefault" id="vdO-Y4-7tt">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vdO-Y4-7tt" id="H6K-0S-BJX">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qya-34-fKN">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
