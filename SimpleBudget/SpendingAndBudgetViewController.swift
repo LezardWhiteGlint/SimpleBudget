@@ -10,22 +10,24 @@ import UIKit
 import CoreData
 
 class SpendingAndBudgetViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITabBarControllerDelegate {
-
+    
     
     
     //MARK: - Properties
     @IBOutlet weak var budgetTableView: UITableView!
-    private let calendar = Calendar(identifier: Calendar.Identifier.iso8601)
+    private let calendar = Calendar(identifier: .iso8601)
     private let currentDate = Date()
+    private lazy var targetDate = getYearAndMonth(date: currentDate)
     private var costs = [Cost]()
     private var budgets = [Budget]()
     private var context = AppDelegate.viewContext
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         costs = loadCost()
         budgets = loadBudget()
+        self.navigationItem.title = displayDateWithYearAndMonth(date: currentDate)
         tabBarController?.delegate = self
     }
     
@@ -42,7 +44,7 @@ class SpendingAndBudgetViewController: UIViewController,UITableViewDelegate,UITa
             display.category.text = String(budgets[indexPath.row].category!)
             display.cost.text = String(costsSum(budget: budgets[indexPath.row], costs: costs))
             display.difference.text = String(differenceCalculation(budget: budgets[indexPath.row], costsSum: costsSum(budget: budgets[indexPath.row],costs: costs)))
-       }
+        }
         return cell
     }
     
@@ -55,7 +57,7 @@ class SpendingAndBudgetViewController: UIViewController,UITableViewDelegate,UITa
     }
     
     //MARK: -Actions
-
+    
     //MARK: -Segue preparation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
@@ -80,13 +82,15 @@ class SpendingAndBudgetViewController: UIViewController,UITableViewDelegate,UITa
             }
             costDetailsTableController.costs = payload
             costDetailsTableController.navigationItem.title = budgets[indexPath.row].category
+        case "ShowBudgetSummary":
+            return
         default: fatalError("Unexpected Segue Identifier;\(String(describing: segue.identifier))")
         }
     }
     
     
     //MARK: -Action
-
+    
     
     
     //MARK: -Private functions
@@ -111,7 +115,9 @@ class SpendingAndBudgetViewController: UIViewController,UITableViewDelegate,UITa
         var returnCosts = [Cost]()
         let result = try? context.fetch(request)
         for eachCost in (result ?? []) {
-            returnCosts.append(eachCost)
+            if queryDateCheck(selectedDate: targetDate, toCheckDate: eachCost.date!){
+                returnCosts.append(eachCost)
+            }
         }
         return returnCosts
     }
@@ -124,12 +130,14 @@ class SpendingAndBudgetViewController: UIViewController,UITableViewDelegate,UITa
         var returnBudgets = [Budget]()
         let result = try? context.fetch(request)
         for eachBudget in (result ?? []) {
-            returnBudgets.append(eachBudget)
+            if queryDateCheck(selectedDate: targetDate, toCheckDate: eachBudget.date!){
+                returnBudgets.append(eachBudget)
+            }
         }
         return returnBudgets
     }
     
-
+    
     
     private func costsSum(budget:Budget, costs:[Cost]) -> Double{
         var result = 0.0
@@ -145,6 +153,19 @@ class SpendingAndBudgetViewController: UIViewController,UITableViewDelegate,UITa
         return budget.amount - costsSum
     }
     
-
-
+    private func displayDateWithYearAndMonth(date:Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        dateFormatter.dateFormat = "YYYY-MM"
+        let dateDescription = dateFormatter.string(from: date)
+        return dateDescription
+    }
+    
+    private func getYearAndMonth(date:Date) -> Date {
+        let yearAndMonthComponent = calendar.dateComponents([.year,.month], from: currentDate)
+        return calendar.date(from: yearAndMonthComponent)!
+    }
+    
+    
 }
