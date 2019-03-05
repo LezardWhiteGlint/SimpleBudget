@@ -41,6 +41,22 @@ class BudgetSummaryTableViewController: UITableViewController {
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let budgetDetailsTableViewController = segue.destination as? BudgetDetailsTableViewController else {
+            fatalError("Unexpected destination: \(segue.destination)")
+        }
+        guard let selectedCell = sender as? UITableViewCell else {
+            fatalError("Unexpected sender:\(String(describing: sender))")
+        }
+        guard let indextPath = tableView.indexPath(for: selectedCell) else {
+            fatalError("The selected cell is not being displayed by the table")
+        }
+        budgetDetailsTableViewController.targetDate = datesToDispaly[indextPath.row]
+        budgetDetailsTableViewController.navigationItem.title = displayDateWithYearAndMonth(date: datesToDispaly[indextPath.row])
+    }
+    
+    //MARK: - Private Functions
+    
     private func loadBudget() -> [Budget]{
         let request: NSFetchRequest<Budget> = Budget.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true)]

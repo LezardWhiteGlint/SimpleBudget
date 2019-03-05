@@ -25,6 +25,8 @@
 		F99DB8BE22211DB30082F141 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99DB8BD22211DB30082F141 /* Budget.swift */; };
 		F99DB8C022212DD00082F141 /* SpendingAndBudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99DB8BF22212DD00082F141 /* SpendingAndBudgetTableViewCell.swift */; };
 		F9FBB7B6222BB96C00574E76 /* CostsDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FBB7B5222BB96C00574E76 /* CostsDetailsTableViewController.swift */; };
+		F9FBB7BA222E76A700574E76 /* BudgetDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FBB7B9222E76A700574E76 /* BudgetDetailsTableViewCell.swift */; };
+		F9FBB7BC222E76BC00574E76 /* BudgetDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FBB7BB222E76BC00574E76 /* BudgetDetailsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		F99DB8BD22211DB30082F141 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 		F99DB8BF22212DD00082F141 /* SpendingAndBudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingAndBudgetTableViewCell.swift; sourceTree = "<group>"; };
 		F9FBB7B5222BB96C00574E76 /* CostsDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostsDetailsTableViewController.swift; sourceTree = "<group>"; };
+		F9FBB7B9222E76A700574E76 /* BudgetDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		F9FBB7BB222E76BC00574E76 /* BudgetDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +130,9 @@
 				F9350D0422227FC30078CC3E /* CategoriesSettingTableViewController.swift */,
 				F9FBB7B5222BB96C00574E76 /* CostsDetailsTableViewController.swift */,
 				F93E9A59222678320086248F /* BudgetSummaryTableViewController.swift */,
+				F9FBB7BB222E76BC00574E76 /* BudgetDetailsTableViewController.swift */,
 				F99DB8BF22212DD00082F141 /* SpendingAndBudgetTableViewCell.swift */,
+				F9FBB7B9222E76A700574E76 /* BudgetDetailsTableViewCell.swift */,
 				F93ACFA32219585B005DBAFD /* Cost.swift */,
 				F99DB8BD22211DB30082F141 /* Budget.swift */,
 				F9350D00222279720078CC3E /* Category.swift */,
@@ -307,9 +313,11 @@
 				F9350D0322227F840078CC3E /* SettingsTableViewController.swift in Sources */,
 				F9350D0522227FC30078CC3E /* CategoriesSettingTableViewController.swift in Sources */,
 				F9FBB7B6222BB96C00574E76 /* CostsDetailsTableViewController.swift in Sources */,
+				F9FBB7BA222E76A700574E76 /* BudgetDetailsTableViewCell.swift in Sources */,
 				F9160CB52215487D00E28C71 /* StaticViewController.swift in Sources */,
 				F99DB8BE22211DB30082F141 /* Budget.swift in Sources */,
 				F9160C87221531B300E28C71 /* BookKeepingViewController.swift in Sources */,
+				F9FBB7BC222E76BC00574E76 /* BudgetDetailsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

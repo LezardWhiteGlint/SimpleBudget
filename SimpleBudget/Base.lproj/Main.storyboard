@@ -284,6 +284,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="K93-wT-6Zn" kind="show" identifier="ShowBudgetDetails" id="xZC-eg-4Xo"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -292,12 +295,73 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Budget Summary" id="BlZ-6V-yHO">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="1OB-WZ-z7a"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="I1F-Qh-mjF"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ze7-uW-jqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2823" y="17"/>
+        </scene>
+        <!--Budget Detail-->
+        <scene sceneID="8rK-nr-2s8">
+            <objects>
+                <tableViewController id="K93-wT-6Zn" customClass="BudgetDetailsTableViewController" customModule="SimpleBudget" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Lls-EK-h2E">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="mKN-qU-Omh" customClass="BudgetDetailsTableViewCell" customModule="SimpleBudget" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mKN-qU-Omh" id="1Ua-FT-6I5">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="170" translatesAutoresizingMaskIntoConstraints="NO" id="sX5-eW-EGU">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wea-rF-mIJ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="102.5" height="43.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ff-Dg-VJk">
+                                                    <rect key="frame" x="272.5" y="0.0" width="102.5" height="43.5"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                </textField>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="sX5-eW-EGU" secondAttribute="trailing" id="04C-aE-deE"/>
+                                        <constraint firstItem="sX5-eW-EGU" firstAttribute="leading" secondItem="1Ua-FT-6I5" secondAttribute="leading" id="Ce5-in-gTv"/>
+                                        <constraint firstItem="sX5-eW-EGU" firstAttribute="top" secondItem="1Ua-FT-6I5" secondAttribute="top" id="bbY-7b-tVQ"/>
+                                        <constraint firstAttribute="bottom" secondItem="sX5-eW-EGU" secondAttribute="bottom" id="fLp-y1-Kx9"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="amount" destination="2ff-Dg-VJk" id="HL5-z8-s02"/>
+                                    <outlet property="category" destination="Wea-rF-mIJ" id="Jun-ql-dut"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="K93-wT-6Zn" id="Pt3-wc-27W"/>
+                            <outlet property="delegate" destination="K93-wT-6Zn" id="TyV-k0-d1o"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Budget Detail" id="vqG-Ho-A0L">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="eoT-Pg-rID"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V5J-Vc-spo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3750" y="18"/>
         </scene>
         <!--Statics-->
         <scene sceneID="aq6-LF-qoo">

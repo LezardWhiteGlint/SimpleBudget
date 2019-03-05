@@ -66,7 +66,7 @@ class SpendingAndBudgetViewController: UIViewController,UITableViewDelegate,UITa
             guard let costDetailsTableController = segue.destination as? CostsDetailsTableViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
-            guard let selectedCell = sender as? UITableViewCell else {
+            guard let selectedCell = sender as? SpendingAndBudgetTableViewCell else {
                 fatalError("Unexpected sender:\(String(describing: sender))")
             }
             guard let indexPath = budgetTableView.indexPath(for: selectedCell) else {
