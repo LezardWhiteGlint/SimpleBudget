@@ -12,5 +12,4 @@ class BudgetDetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var category: UILabel!
     @IBOutlet weak var amount: UITextField!
     
-
 }

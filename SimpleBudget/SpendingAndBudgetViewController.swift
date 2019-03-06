@@ -121,6 +121,8 @@ class SpendingAndBudgetViewController: UIViewController,UITableViewDelegate,UITa
         }
         return returnCosts
     }
+
+    
     
     private func loadBudget() -> [Budget]{
         let request: NSFetchRequest<Budget> = Budget.fetchRequest()

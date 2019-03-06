@@ -13,12 +13,13 @@ class BudgetDetailsTableViewController: UITableViewController {
     private var categories = [Category]()
     private var budgets = [Budget]()
     private let calendar = Calendar(identifier: .iso8601)
+    private let context = AppDelegate.viewContext
     var targetDate = Date()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //budgets = loadBudgets()
+        budgets = loadBudgets()
         //TODO filter the correct budgets date to display, then make it changable after push save button
 
     }
@@ -35,12 +36,61 @@ class BudgetDetailsTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "BudgetDetailCell", for: indexPath) as? BudgetDetailsTableViewCell else {
+            fatalError("Cell Doesn't not exist")
+        }
+        cell.category.text = budgets[indexPath.row].category
+        cell.amount.text = String(budgets[indexPath.row].amount)
 
         return cell
     }
+    
+    //MARK: -UITableViewDelegates
+
+    
+    
+    
+    //MARK: -Actions
+    @IBAction func saveButton(_ sender: UIBarButtonItem) {
+        saveChanges()
+    }
+    
+    
+    private func loadBudgets() -> [Budget]{
+        let request: NSFetchRequest<Budget> = Budget.fetchRequest()
+                request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true)]
+        //        request.predicate = NSPredicate(format: "amount > %@", "0")
+        //        let context = AppDelegate.viewContext
+        var returnBudgets = [Budget]()
+        let result = try? context.fetch(request)
+        for eachBudget in (result ?? []) {
+            if queryDateCheck(selectedDate: targetDate, toCheckDate: eachBudget.date!){
+                returnBudgets.append(eachBudget)
+            }
+        }
+        return returnBudgets
+    }
+    
+    private func queryDateCheck(selectedDate:Date, toCheckDate:Date) -> Bool {
+        let yearCheck = calendar.component(Calendar.Component.year, from: selectedDate) == calendar.component(Calendar.Component.year, from: toCheckDate)
+        let monthCheck = calendar.component(Calendar.Component.month, from: selectedDate) == calendar.component(Calendar.Component.month, from: toCheckDate)
+        return yearCheck && monthCheck
+    }
+    
+    private func saveChanges() {
+        var row = 0
+        var indexPath = IndexPath(row: row, section: 0)
+        for budget in budgets {
+            if let cell = tableView.cellForRow(at: indexPath) as? BudgetDetailsTableViewCell{
+                budget.setValue(Double(cell.amount.text!), forKey: "amount")
+                try? context.save()
+            }
+            row += 1
+            indexPath = IndexPath(row: row, section: 0)
+        }
+        
+    }
+    
     
 
     
