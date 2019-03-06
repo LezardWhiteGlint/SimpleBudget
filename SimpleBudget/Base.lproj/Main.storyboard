@@ -296,12 +296,47 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Budget Summary" id="BlZ-6V-yHO">
                         <barButtonItem key="backBarButtonItem" title="Back" id="1OB-WZ-z7a"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="I1F-Qh-mjF"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="I1F-Qh-mjF">
+                            <connections>
+                                <segue destination="6lK-hQ-SJA" kind="show" identifier="NewBudgetMonthAdd" id="zuK-m1-bSB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ze7-uW-jqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2823" y="17"/>
+        </scene>
+        <!--New Budget Month Add-->
+        <scene sceneID="x4y-uA-8d7">
+            <objects>
+                <viewController id="6lK-hQ-SJA" customClass="NewBudgetMonthAddViewController" customModule="SimpleBudget" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gv0-bv-ugo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mkf-Lg-4hx">
+                                <rect key="frame" x="0.0" y="186" width="375" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="i6D-s0-efE"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Budget Month Add" id="5H3-h3-RcW">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="3gH-rL-1LV">
+                            <connections>
+                                <action selector="test:" destination="6lK-hQ-SJA" id="GEl-Zd-E0D"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="yearAndMonthPicker" destination="Mkf-Lg-4hx" id="vE1-0y-wxN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hHu-1g-vks" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3750" y="-796"/>
         </scene>
         <!--Budget Detail-->
         <scene sceneID="8rK-nr-2s8">
