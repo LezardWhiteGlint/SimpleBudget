@@ -136,7 +136,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kq2-TX-On2">
-                                <rect key="frame" x="0.0" y="87.5" width="375" height="530.5"/>
+                                <rect key="frame" x="0.0" y="87.5" width="375" height="306.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SpendingBudgetCell" id="Mws-eC-gxa" customClass="SpendingAndBudgetTableViewCell" customModule="SimpleBudget" customModuleProvider="target">
@@ -230,14 +230,21 @@
                                     <constraint firstAttribute="height" constant="20.5" id="B18-ut-D5Y"/>
                                 </constraints>
                             </stackView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2tA-vu-Cfc">
+                                <rect key="frame" x="16" y="402" width="343" height="216"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="2tA-vu-Cfc" firstAttribute="bottom" secondItem="O1u-W8-tvY" secondAttribute="bottom" id="1aX-ch-76P"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="2tA-vu-Cfc" secondAttribute="trailing" constant="16" id="41h-Gu-3D2"/>
                             <constraint firstItem="D3h-Wc-Tm9" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="7YN-Cs-CgJ"/>
-                            <constraint firstItem="Kq2-TX-On2" firstAttribute="bottom" secondItem="O1u-W8-tvY" secondAttribute="bottom" id="DMN-ax-y18"/>
+                            <constraint firstItem="2tA-vu-Cfc" firstAttribute="top" secondItem="Kq2-TX-On2" secondAttribute="bottom" constant="8" id="9le-gP-AM5"/>
                             <constraint firstItem="Kq2-TX-On2" firstAttribute="top" secondItem="D3h-Wc-Tm9" secondAttribute="bottom" constant="3" id="Gdn-fU-Tov"/>
                             <constraint firstItem="Kq2-TX-On2" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="Gxt-Av-SKM"/>
+                            <constraint firstItem="2tA-vu-Cfc" firstAttribute="top" secondItem="Kq2-TX-On2" secondAttribute="bottom" constant="8" id="X0U-gt-BE7"/>
                             <constraint firstItem="Kq2-TX-On2" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="Zes-RE-Dxb"/>
+                            <constraint firstItem="2tA-vu-Cfc" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="16" id="hNE-k3-77N"/>
                             <constraint firstItem="D3h-Wc-Tm9" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="hxQ-Nh-X2w"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="D3h-Wc-Tm9" secondAttribute="trailing" id="pJ6-VW-cjJ"/>
                         </constraints>
@@ -253,6 +260,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="budgetTableView" destination="Kq2-TX-On2" id="u3J-vg-b3T"/>
+                        <outlet property="yearAndMonthPicker" destination="2tA-vu-Cfc" id="cWJ-Hl-L3d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>

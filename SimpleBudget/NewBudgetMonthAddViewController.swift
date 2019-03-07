@@ -18,14 +18,12 @@ class NewBudgetMonthAddViewController: UIViewController,UIPickerViewDelegate,UIP
     private let calendar = Calendar(identifier: .iso8601)
     private let context = AppDelegate.viewContext
     
-    @IBAction func test(_ sender: UIBarButtonItem) {
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         yearAndMonthPicker.dataSource = self
         yearAndMonthPicker.delegate = self
+        setInitialPicker()
     }
     
     
@@ -56,6 +54,9 @@ class NewBudgetMonthAddViewController: UIViewController,UIPickerViewDelegate,UIP
         }
     }
     
+    
+    
+    //MARK: -Segue preparation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let budgetDetailsTableViewController = segue.destination as? BudgetDetailsTableViewController else {
             fatalError("Unexpected destination: \(segue.destination)")
@@ -105,6 +106,14 @@ class NewBudgetMonthAddViewController: UIViewController,UIPickerViewDelegate,UIP
         return dateDescription
     }
     
+    private func setInitialPicker() {
+        let currentDate = Date()
+        let yearAndMonthComponent = calendar.dateComponents([.year,.month], from: currentDate)
+        let year = yearAndMonthComponent.year!
+        let month = yearAndMonthComponent.month!
+        yearAndMonthPicker.selectRow(yearCompenent.firstIndex(of: year)!, inComponent: 0, animated: true)
+        yearAndMonthPicker.selectRow(monthCompenent.firstIndex(of: month)!, inComponent: 1, animated: true)
+    }
     
     
 

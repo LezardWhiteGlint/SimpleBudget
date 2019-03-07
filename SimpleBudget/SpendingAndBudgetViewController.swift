@@ -9,7 +9,9 @@
 import UIKit
 import CoreData
 
-class SpendingAndBudgetViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITabBarControllerDelegate {
+class SpendingAndBudgetViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITabBarControllerDelegate,UIPickerViewDataSource,UIPickerViewDelegate {
+
+    
     
     
     
@@ -22,6 +24,10 @@ class SpendingAndBudgetViewController: UIViewController,UITableViewDelegate,UITa
     private var budgets = [Budget]()
     private var context = AppDelegate.viewContext
     
+    @IBOutlet weak var yearAndMonthPicker: UIPickerView!
+    private let yearCompenent = Array(2000...2050)
+    private let monthCompenent = Array(1...12)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +35,9 @@ class SpendingAndBudgetViewController: UIViewController,UITableViewDelegate,UITa
         budgets = loadBudget()
         self.navigationItem.title = displayDateWithYearAndMonth(date: currentDate)
         tabBarController?.delegate = self
+        yearAndMonthPicker.dataSource = self
+        yearAndMonthPicker.delegate = self
+        setInitialPicker()
     }
     
     //MARK: - UITableView Delegates
@@ -54,6 +63,37 @@ class SpendingAndBudgetViewController: UIViewController,UITableViewDelegate,UITa
         costs = loadCost()
         budgets = loadBudget()
         budgetTableView.reloadData()
+    }
+    
+    //MARK: -UIPickerViewDatasource
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 2
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        switch component {
+        case 0:
+            return yearCompenent.count
+        case 1:
+            return monthCompenent.count
+        default:
+            return 0
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        switch component {
+        case 0:
+            return String(yearCompenent[row])
+        case 1:
+            return String(monthCompenent[row])
+        default:
+            return "No Name"
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        updateBudgetAndSpending()
     }
     
     //MARK: -Actions
@@ -167,6 +207,27 @@ class SpendingAndBudgetViewController: UIViewController,UITableViewDelegate,UITa
     private func getYearAndMonth(date:Date) -> Date {
         let yearAndMonthComponent = calendar.dateComponents([.year,.month], from: date)
         return calendar.date(from: yearAndMonthComponent)!
+    }
+    
+    private func setInitialPicker() {
+        let currentDate = Date()
+        let yearAndMonthComponent = calendar.dateComponents([.year,.month], from: currentDate)
+        let year = yearAndMonthComponent.year!
+        let month = yearAndMonthComponent.month!
+        yearAndMonthPicker.selectRow(yearCompenent.firstIndex(of: year)!, inComponent: 0, animated: true)
+        yearAndMonthPicker.selectRow(monthCompenent.firstIndex(of: month)!, inComponent: 1, animated: true)
+    }
+    
+    private func updateBudgetAndSpending() {
+        let year = yearCompenent[yearAndMonthPicker.selectedRow(inComponent: 0)]
+        let month = monthCompenent[yearAndMonthPicker.selectedRow(inComponent: 1)]
+        let pickerDateComponent = DateComponents(calendar: calendar, timeZone: nil, era: nil, year: year, month: month, day: nil, hour: nil, minute: nil, second: nil, nanosecond: nil, weekday: nil, weekdayOrdinal: nil, quarter: nil, weekOfMonth: nil, weekOfYear: nil, yearForWeekOfYear: nil)
+        let pickerDate = calendar.date(from: pickerDateComponent)!
+        navigationItem.title = displayDateWithYearAndMonth(date: pickerDate)
+        targetDate = getYearAndMonth(date: pickerDate)
+        costs = loadCost()
+        budgets = loadBudget()
+        budgetTableView.reloadData()
     }
     
     
