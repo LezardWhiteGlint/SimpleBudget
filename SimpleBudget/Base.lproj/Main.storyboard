@@ -315,18 +315,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mkf-Lg-4hx">
-                                <rect key="frame" x="0.0" y="186" width="375" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mkf-Lg-4hx">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="i6D-s0-efE" firstAttribute="bottom" secondItem="Mkf-Lg-4hx" secondAttribute="bottom" id="C8d-Ja-OPJ"/>
+                            <constraint firstItem="Mkf-Lg-4hx" firstAttribute="trailing" secondItem="i6D-s0-efE" secondAttribute="trailing" id="JCL-8h-T4L"/>
+                            <constraint firstItem="Mkf-Lg-4hx" firstAttribute="leading" secondItem="i6D-s0-efE" secondAttribute="leading" id="Jhr-KO-Rwi"/>
+                            <constraint firstItem="Mkf-Lg-4hx" firstAttribute="top" secondItem="i6D-s0-efE" secondAttribute="top" id="VWg-CE-Jgh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="i6D-s0-efE"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Budget Month Add" id="5H3-h3-RcW">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="3gH-rL-1LV">
                             <connections>
-                                <action selector="test:" destination="6lK-hQ-SJA" id="GEl-Zd-E0D"/>
+                                <segue destination="K93-wT-6Zn" kind="show" id="HMo-3Z-o7u"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -612,4 +617,7 @@
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="HMo-3Z-o7u"/>
+    </inferredMetricsTieBreakers>
 </document>

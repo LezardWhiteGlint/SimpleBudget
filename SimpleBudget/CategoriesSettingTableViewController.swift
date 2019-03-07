@@ -45,7 +45,6 @@ class CategoriesSettingTableViewController: UITableViewController {
         let alert = UIAlertController(title: "test", message: "message test", preferredStyle: .alert)
         alert.addTextField(configurationHandler: nil)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in self.addCategory(name: alert.textFields![0].text!) } ))
-        
         present(alert, animated: true, completion: nil)
     }
     
