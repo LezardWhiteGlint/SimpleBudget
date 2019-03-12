@@ -88,7 +88,7 @@ class BudgetDetailsTableViewController: UITableViewController {
             indexPath = IndexPath(row: row, section: 0)
         }
         let alert = UIAlertController(title: "Budgets Save", message: "Amounts Saved successfully", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler:nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
         
     }

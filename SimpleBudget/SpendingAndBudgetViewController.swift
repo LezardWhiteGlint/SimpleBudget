@@ -166,7 +166,7 @@ class SpendingAndBudgetViewController: UIViewController,UITableViewDelegate,UITa
     
     private func loadBudget() -> [Budget]{
         let request: NSFetchRequest<Budget> = Budget.fetchRequest()
-        //        request.sortDescriptors = [NSSortDescriptor(key: "order", ascending: true)]
+        request.sortDescriptors = [NSSortDescriptor(key: "amount", ascending: false)]
         //        request.predicate = NSPredicate(format: "amount > %@", "0")
         //        let context = AppDelegate.viewContext
         var returnBudgets = [Budget]()

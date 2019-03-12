@@ -68,17 +68,19 @@ class BookKeepingViewController: UIViewController, UITextFieldDelegate, UIScroll
     
     //MARK: Actions
     @IBAction func Done(_ sender: Any) {
-        let cost = Cost(context: context)
-        cost.date = date.date
-        cost.category = categoryPickerDataSource[category.selectedRow(inComponent: 0)]
-        cost.amount = (Double(amount.text ?? "")) ?? 0.0
-        cost.reminder = reminder.text
-        amount.text = ""
-        reminder.text = ""
-        do {
-            try context.save()
-        }catch {
-            fatalError("Context save failed")
+        if !(amount.text?.isEmpty)! {
+            let cost = Cost(context: context)
+            cost.date = date.date
+            cost.category = categoryPickerDataSource[category.selectedRow(inComponent: 0)]
+            cost.amount = (Double(amount.text ?? "")) ?? 0.0
+            cost.reminder = reminder.text
+            amount.text = ""
+            reminder.text = ""
+            do {
+                try context.save()
+            }catch {
+                fatalError("Context save failed")
+            }
         }
     }
     @IBAction func doneEditing(_ sender: UITapGestureRecognizer) {

@@ -252,7 +252,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Spending &amp; Budget" id="Mpa-q8-Jhl">
                         <barButtonItem key="backBarButtonItem" title="Back" id="gdW-gV-bma"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="mSJ-Hq-maU">
+                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="mSJ-Hq-maU">
                             <connections>
                                 <segue destination="Qy5-6G-SRx" kind="show" identifier="ShowBudgetSummary" id="Ote-vZ-j4A"/>
                             </connections>

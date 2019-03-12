@@ -26,12 +26,10 @@ class BudgetSummaryTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return datesToDispaly.count
     }
 
@@ -39,6 +37,21 @@ class BudgetSummaryTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BudgetSummaryDateCell", for: indexPath)
         cell.textLabel?.text = displayDateWithYearAndMonth(date: datesToDispaly[indexPath.row])
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let dateToDelete = datesToDispaly[indexPath.row]
+            for budget in budgets {
+                if budget.date == dateToDelete{
+                    context.delete(budget)
+                }
+            }
+            datesToDispaly.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            try? context.save()
+            
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -104,6 +117,7 @@ class BudgetSummaryTableViewController: UITableViewController {
         let dateDescription = dateFormatter.string(from: date)
         return dateDescription
     }
+    
     
     
  

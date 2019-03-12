@@ -61,27 +61,34 @@ class NewBudgetMonthAddViewController: UIViewController,UIPickerViewDelegate,UIP
         guard let budgetDetailsTableViewController = segue.destination as? BudgetDetailsTableViewController else {
             fatalError("Unexpected destination: \(segue.destination)")
         }
-        let dateToDisplay = addNewBudget()!
+        let year = yearCompenent[yearAndMonthPicker.selectedRow(inComponent: 0)]
+        let month = monthCompenent[yearAndMonthPicker.selectedRow(inComponent: 1)]
+        let dateCommponentToAdd = DateComponents(calendar: calendar, timeZone: nil, era: nil, year: year, month: month, day: nil, hour: nil, minute: nil, second: nil, nanosecond: nil, weekday: nil, weekdayOrdinal: nil, quarter: nil, weekOfMonth: nil, weekOfYear: nil, yearForWeekOfYear: nil)
+        let dateToDisplay = calendar.date(from:dateCommponentToAdd)!
         budgetDetailsTableViewController.targetDate = dateToDisplay
         budgetDetailsTableViewController.navigationItem.title = displayDateWithYearAndMonth(date: dateToDisplay)
+        addNewBudget()
     }
     
     
-    private func addNewBudget() -> Date?{
+    private func addNewBudget(){
         //Construct the date
         let year = yearCompenent[yearAndMonthPicker.selectedRow(inComponent: 0)]
         let month = monthCompenent[yearAndMonthPicker.selectedRow(inComponent: 1)]
         let dateCommponentToAdd = DateComponents(calendar: calendar, timeZone: nil, era: nil, year: year, month: month, day: nil, hour: nil, minute: nil, second: nil, nanosecond: nil, weekday: nil, weekdayOrdinal: nil, quarter: nil, weekOfMonth: nil, weekOfYear: nil, yearForWeekOfYear: nil)
         let dateToAdd = calendar.date(from:dateCommponentToAdd)
         //Add the date
-        categories = loadCategory()
-        for eachCategory in categories {
-            let budget = Budget(context: context)
-            budget.amount = 0.0
-            budget.date = dateToAdd
-            budget.category = eachCategory.name
+        let request:NSFetchRequest<Budget> = Budget.fetchRequest()
+        let fetchBudgetResult = (try? context.fetch(request))!
+        if !duplicateDate(dateToCheck: fetchBudgetResult, targetDate: dateToAdd!) {
+            categories = loadCategory()
+            for eachCategory in categories {
+                let budget = Budget(context: context)
+                budget.amount = 0.0
+                budget.date = dateToAdd
+                budget.category = eachCategory.name
+            }
         }
-        return dateToAdd
     }
     
     private func loadCategory() -> [Category]{
@@ -113,6 +120,21 @@ class NewBudgetMonthAddViewController: UIViewController,UIPickerViewDelegate,UIP
         let month = yearAndMonthComponent.month!
         yearAndMonthPicker.selectRow(yearCompenent.firstIndex(of: year)!, inComponent: 0, animated: true)
         yearAndMonthPicker.selectRow(monthCompenent.firstIndex(of: month)!, inComponent: 1, animated: true)
+    }
+    
+    private func queryDateCheck(selectedDate:Date, toCheckDate:Date) -> Bool {
+        let yearCheck = calendar.component(Calendar.Component.year, from: selectedDate) == calendar.component(Calendar.Component.year, from: toCheckDate)
+        let monthCheck = calendar.component(Calendar.Component.month, from: selectedDate) == calendar.component(Calendar.Component.month, from: toCheckDate)
+        return yearCheck && monthCheck
+    }
+    
+    private func duplicateDate(dateToCheck:[Budget], targetDate:Date) -> Bool {
+        for budget in dateToCheck {
+            if queryDateCheck(selectedDate: targetDate, toCheckDate: budget.date!) {
+                return true
+            }
+        }
+        return false
     }
     
     

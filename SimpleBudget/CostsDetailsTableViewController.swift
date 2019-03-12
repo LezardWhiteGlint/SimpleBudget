@@ -10,6 +10,7 @@ import UIKit
 
 class CostsDetailsTableViewController: UITableViewController {
     var costs = [Cost]()
+    let context = AppDelegate.viewContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +43,20 @@ class CostsDetailsTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let cost = costs[indexPath.row]
+            //delete from datasource
+            context.delete(cost)
+            //delete from local list
+            costs.remove(at: indexPath.row)
+            //delete from ui
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            try? context.save()
+        }
+    }
+    
+    
     //MARK: - UITableViewDelegates
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let reminder = costs[indexPath.row].reminder, reminder != "" {
@@ -51,6 +66,7 @@ class CostsDetailsTableViewController: UITableViewController {
         }
     }
     
+    //TODO: Deleting single cost function
 
 
 
