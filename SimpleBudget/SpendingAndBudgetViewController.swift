@@ -57,6 +57,12 @@ class SpendingAndBudgetViewController: UIViewController,UITableViewDelegate,UITa
         return cell
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        costs = loadCost()
+        budgets = loadBudget()
+        budgetTableView.reloadData()
+    }
+    
     //MARK: - UITabBarControllerDelegate
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
