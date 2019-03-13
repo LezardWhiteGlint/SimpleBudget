@@ -418,14 +418,29 @@
         <!--Statics-->
         <scene sceneID="aq6-LF-qoo">
             <objects>
-                <viewController title="Statics" id="wHk-9o-4uO" userLabel="Statics" customClass="StaticViewController" customModule="SimpleBudget" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Statics" id="wHk-9o-4uO" userLabel="Statics" customClass="StaticGraphicViewController" customModule="SimpleBudget" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gDX-Gx-5Pc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="piK-gH-sPG" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ycz-ZQ-hmt" firstAttribute="bottom" secondItem="piK-gH-sPG" secondAttribute="bottom" id="0F9-L6-5XI"/>
+                            <constraint firstItem="piK-gH-sPG" firstAttribute="top" secondItem="ycz-ZQ-hmt" secondAttribute="top" id="M7j-dw-16G"/>
+                            <constraint firstItem="ycz-ZQ-hmt" firstAttribute="trailing" secondItem="piK-gH-sPG" secondAttribute="trailing" id="mxX-jU-5cL"/>
+                            <constraint firstItem="piK-gH-sPG" firstAttribute="leading" secondItem="ycz-ZQ-hmt" secondAttribute="leading" id="peW-aR-U5B"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ycz-ZQ-hmt"/>
                     </view>
                     <navigationItem key="navigationItem" id="z9O-SX-V8a"/>
+                    <connections>
+                        <outlet property="lineChartView" destination="piK-gH-sPG" id="TBv-UH-bW0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hOq-tA-he3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
