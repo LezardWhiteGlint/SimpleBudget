@@ -39,6 +39,12 @@ class BudgetSummaryTableViewController: UITableViewController {
         return cell
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        budgets = loadBudget()
+        datesToDispaly = getUniqueDate(budgets: budgets)
+        tableView.reloadData()
+    }
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let dateToDelete = datesToDispaly[indexPath.row]

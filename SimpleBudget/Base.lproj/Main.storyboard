@@ -439,7 +439,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="z9O-SX-V8a"/>
                     <connections>
-                        <outlet property="lineChartView" destination="piK-gH-sPG" id="TBv-UH-bW0"/>
+                        <outlet property="lineChartView" destination="piK-gH-sPG" id="i5Y-ry-zeo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hOq-tA-he3" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -57,6 +57,7 @@ class SpendingAndBudgetViewController: UIViewController,UITableViewDelegate,UITa
         return cell
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
         costs = loadCost()
         budgets = loadBudget()

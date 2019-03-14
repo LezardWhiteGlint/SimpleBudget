@@ -66,7 +66,7 @@ class CostsDetailsTableViewController: UITableViewController {
         }
     }
     
-    //TODO: Deleting single cost function
+
 
 
 
