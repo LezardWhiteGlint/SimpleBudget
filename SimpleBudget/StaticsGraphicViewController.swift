@@ -29,6 +29,11 @@ class StaticGraphicViewController : UIViewController,ChartViewDelegate,IAxisValu
         lineChartView.data = data
         let dateFormatterXAxis = ChartDateValueFormatter()
         lineChartView.xAxis.valueFormatter = dateFormatterXAxis
+        lineChartView.xAxis.labelRotationAngle = 90
+        lineChartView.xAxis.labelCount = 4
+        lineChartView.xAxis.drawGridLinesEnabled = false
+        lineChartView.leftAxis.drawGridLinesEnabled = false
+        
 
         
         
