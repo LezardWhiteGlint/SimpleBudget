@@ -120,54 +120,59 @@ class BookKeepingViewController: UIViewController, UITextFieldDelegate, UIScroll
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var constraintContentHeight: NSLayoutConstraint!
     
-    // MARK: UITextFieldDelegate
 
-        func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-            activeField = textField
-            lastOffset = self.scrollView.contentOffset
-            return true
-        }
-        
-        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            activeField?.resignFirstResponder()
-            activeField = nil
-            return true
-        }
+}
+
+
+extension BookKeepingViewController {
+    // MARK: UITextFieldDelegate
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        activeField = textField
+        lastOffset = self.scrollView.contentOffset
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        activeField?.resignFirstResponder()
+        activeField = nil
+        return true
+    }
     
     // MARK: Keyboard Handling
-
+    
     @objc func keyboardWillShow(notification: NSNotification) {
-            if keyboardHeight != nil {
-                return
-            }
-            
-            if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-                keyboardHeight = keyboardSize.height
-                
-                // so increase contentView's height by keyboard height
-                UIView.animate(withDuration: 0.3, animations: {
-                    self.constraintContentHeight.constant += self.keyboardHeight
-                })
-                
-                let collapseSpace = keyboardHeight + 0.1
-                
-                // set new offset for scroll view
-                UIView.animate(withDuration: 0.3, animations: {
-                    // scroll to the position above keyboard 10 points
-                    self.scrollView.contentOffset = CGPoint(x: self.lastOffset.x, y: collapseSpace + 10)
-                })
-            }
+        if keyboardHeight != nil {
+            return
         }
         
-    @objc func keyboardWillHide(notification: NSNotification) {
-            UIView.animate(withDuration: 0.3) {
-                self.constraintContentHeight.constant -= self.keyboardHeight
-                
-                self.scrollView.contentOffset = self.lastOffset
-            }
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            keyboardHeight = keyboardSize.height
             
-            keyboardHeight = nil
+            // so increase contentView's height by keyboard height
+            UIView.animate(withDuration: 0.3, animations: {
+                self.constraintContentHeight.constant += self.keyboardHeight
+            })
+            
+            let collapseSpace = keyboardHeight + 0.1
+            
+            // set new offset for scroll view
+            UIView.animate(withDuration: 0.3, animations: {
+                // scroll to the position above keyboard 10 points
+                self.scrollView.contentOffset = CGPoint(x: self.lastOffset.x, y: collapseSpace + 10)
+            })
         }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        UIView.animate(withDuration: 0.3) {
+            self.constraintContentHeight.constant -= self.keyboardHeight
+            
+            self.scrollView.contentOffset = self.lastOffset
+        }
+        
+        keyboardHeight = nil
+    }
     
     
 }

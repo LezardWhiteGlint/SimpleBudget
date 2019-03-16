@@ -135,7 +135,7 @@
                             <outletCollection property="gestureRecognizers" destination="fuM-tC-cBc" appends="YES" id="guD-cz-ukd"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Bookkeeping" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Bookkeeping" image="Bookkeeping" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="amount" destination="mWe-7z-RWt" id="dms-RQ-tQz"/>
                         <outlet property="category" destination="mj1-JR-nCL" id="Ysk-dJ-oWM"/>
@@ -584,7 +584,7 @@
         <scene sceneID="rtd-x4-RBe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hyf-bq-Klv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Budget" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Budget" image="Budgeting" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="m5W-PL-veA">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -648,7 +648,7 @@
         <scene sceneID="s8O-7z-sQp">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="z8K-kc-Gax" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="OPk-vx-gFa"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="Setting" id="OPk-vx-gFa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mE8-it-L8i">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -667,7 +667,7 @@
         <scene sceneID="B1d-Xu-6Mt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6R8-Ig-MOt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Statistics" id="UbK-cY-TBf" userLabel="Third"/>
+                    <tabBarItem key="tabBarItem" title="Statistics" image="Statics" id="UbK-cY-TBf" userLabel="Third"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WHH-TA-PcH">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -684,8 +684,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="Bookkeeping" width="50" height="50"/>
+        <image name="Budgeting" width="48" height="48"/>
+        <image name="Setting" width="50" height="50"/>
+        <image name="Statics" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="HMo-3Z-o7u"/>
