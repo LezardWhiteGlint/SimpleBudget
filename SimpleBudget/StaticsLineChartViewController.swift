@@ -11,7 +11,7 @@ import Charts
 import CoreData
 
 
-class StaticGraphicViewController : UIViewController,ChartViewDelegate,IAxisValueFormatter {
+class StaticsLineChartViewController : UIViewController,ChartViewDelegate,IAxisValueFormatter {
     @IBOutlet weak var lineChartView: LineChartView!
     let context = AppDelegate.viewContext
     var costs = [Cost]()
@@ -30,14 +30,9 @@ class StaticGraphicViewController : UIViewController,ChartViewDelegate,IAxisValu
         let dateFormatterXAxis = ChartDateValueFormatter()
         lineChartView.xAxis.valueFormatter = dateFormatterXAxis
         lineChartView.xAxis.labelRotationAngle = 90
-        lineChartView.xAxis.labelCount = 4
         lineChartView.xAxis.drawGridLinesEnabled = false
         lineChartView.leftAxis.drawGridLinesEnabled = false
-        
-
-        
-        
-        
+        chartViewLabelCountSet()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -46,6 +41,7 @@ class StaticGraphicViewController : UIViewController,ChartViewDelegate,IAxisValu
         dates = loadDates(budgets: budgets)
         let data = lineDataPreparation(dates: dates, budgets: budgets, costs: costs)
         lineChartView.data = data
+        chartViewLabelCountSet()
  
 
     }
@@ -135,6 +131,18 @@ class StaticGraphicViewController : UIViewController,ChartViewDelegate,IAxisValu
         budgetSet.setColor(.red)
         let output = LineChartData(dataSets: [costSet,budgetSet])
         return output
+    }
+    
+    private func chartViewLabelCountSet() {
+        let dateCount = dates.count
+        switch dateCount {
+        case 0:
+            lineChartView.xAxis.labelCount = 1
+        case 1...10:
+            lineChartView.xAxis.labelCount = dateCount
+        default:
+            lineChartView.xAxis.labelCount = 10
+        }
     }
     
     

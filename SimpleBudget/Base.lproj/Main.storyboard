@@ -446,7 +446,7 @@
         <!--Statics-->
         <scene sceneID="aq6-LF-qoo">
             <objects>
-                <viewController title="Statics" id="wHk-9o-4uO" userLabel="Statics" customClass="StaticGraphicViewController" customModule="SimpleBudget" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Statics" id="wHk-9o-4uO" userLabel="Statics" customClass="StaticsLineChartViewController" customModule="SimpleBudget" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gDX-Gx-5Pc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -465,14 +465,96 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ycz-ZQ-hmt"/>
                     </view>
-                    <navigationItem key="navigationItem" id="z9O-SX-V8a"/>
+                    <navigationItem key="navigationItem" title="Monthly Total Spending and Budgets" id="z9O-SX-V8a"/>
                     <connections>
                         <outlet property="lineChartView" destination="piK-gH-sPG" id="i5Y-ry-zeo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hOq-tA-he3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1904.8" y="681.40929535232385"/>
+            <point key="canvasLocation" x="2822" y="681"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="uEN-k1-vFC">
+            <objects>
+                <tableViewController id="4e0-5U-ZLX" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NJs-Rf-Kmn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections>
+                            <tableViewSection id="v1D-kv-kVB">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="yad-HT-2ZA" style="IBUITableViewCellStyleDefault" id="7Xm-HT-DzQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7Xm-HT-DzQ" id="GeC-Fe-NMv">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Monthly Total Spendings and Budgets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yad-HT-2ZA">
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="wHk-9o-4uO" kind="show" id="Bie-gd-xIN"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="Gcp-XF-wex" style="IBUITableViewCellStyleDefault" id="dFU-IX-d2M">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dFU-IX-d2M" id="bVF-9r-Zzw">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Monthly Total Spending" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gcp-XF-wex">
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="kAi-Ww-YEM" kind="show" id="lVR-RY-w4i"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="njX-cj-aj2" style="IBUITableViewCellStyleDefault" id="jrF-ao-kS2">
+                                        <rect key="frame" x="0.0" y="88" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jrF-ao-kS2" id="3V6-ew-Vsk">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Daily Spending" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="njX-cj-aj2">
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="4e0-5U-ZLX" id="v3Z-OE-kWF"/>
+                            <outlet property="delegate" destination="4e0-5U-ZLX" id="IZP-9l-5DC"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="ht9-X5-p1h"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TbJ-I6-EAk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1905" y="681"/>
         </scene>
         <!--Settings-->
         <scene sceneID="knI-7L-yJg">
@@ -523,7 +605,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fGh-2d-ZhN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1892" y="1361.4692653673164"/>
+            <point key="canvasLocation" x="1975" y="2591"/>
         </scene>
         <!--Categories Setting-->
         <scene sceneID="oBa-Fn-uTV">
@@ -558,7 +640,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y4F-4N-3eI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2694" y="1361"/>
+            <point key="canvasLocation" x="2775" y="2590"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -661,7 +743,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rjn-G6-B9b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="952.79999999999995" y="1361.4692653673164"/>
+            <point key="canvasLocation" x="1034" y="2591"/>
         </scene>
         <!--Statistics-->
         <scene sceneID="B1d-Xu-6Mt">
@@ -675,21 +757,52 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="wHk-9o-4uO" kind="relationship" relationship="rootViewController" id="n3z-lc-7A6"/>
+                        <segue destination="4e0-5U-ZLX" kind="relationship" relationship="rootViewController" id="pjo-kp-Afy"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5q3-zI-kH2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="965.60000000000002" y="680.5097451274363"/>
         </scene>
+        <!--Statics-->
+        <scene sceneID="Mkp-af-fIn">
+            <objects>
+                <viewController title="Statics" id="kAi-Ww-YEM" userLabel="Statics" customClass="StaticsBarChartViewTotalSpendingController" customModule="SimpleBudget" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4G4-z6-7Ho">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ST-Rt-vKP" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LeQ-5k-gzx" firstAttribute="trailing" secondItem="7ST-Rt-vKP" secondAttribute="trailing" id="Ked-0u-kVH"/>
+                            <constraint firstItem="7ST-Rt-vKP" firstAttribute="leading" secondItem="LeQ-5k-gzx" secondAttribute="leading" id="X3T-vo-QEZ"/>
+                            <constraint firstItem="7ST-Rt-vKP" firstAttribute="top" secondItem="LeQ-5k-gzx" secondAttribute="top" id="mSl-b3-fXT"/>
+                            <constraint firstItem="LeQ-5k-gzx" firstAttribute="bottom" secondItem="7ST-Rt-vKP" secondAttribute="bottom" id="wP8-oB-ula"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LeQ-5k-gzx"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3cl-lW-QKG"/>
+                    <connections>
+                        <outlet property="barChartView" destination="7ST-Rt-vKP" id="Y9t-UF-WMg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gOQ-lN-OcM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2822" y="1392"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Bookkeeping" width="50" height="50"/>
-        <image name="Budgeting" width="48" height="48"/>
+        <image name="Budgeting" width="38.400001525878906" height="38.400001525878906"/>
         <image name="Setting" width="50" height="50"/>
         <image name="Statics" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HMo-3Z-o7u"/>
+        <segue reference="xZC-eg-4Xo"/>
     </inferredMetricsTieBreakers>
 </document>

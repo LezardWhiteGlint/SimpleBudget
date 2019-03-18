@@ -15,7 +15,9 @@ class ChartDateValueFormatter:NSObject,IAxisValueFormatter {
     
     override init(){
         super.init()
-        dateFormatter.dateFormat = "YYYY-MM"
+//        dateFormatter.dateFormat = "YYYY-MM"
+        dateFormatter.timeStyle = .none
+        dateFormatter.dateStyle = .short
     }
     
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {

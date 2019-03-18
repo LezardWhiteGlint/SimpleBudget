@@ -145,6 +145,9 @@ extension BookKeepingViewController {
         if keyboardHeight != nil {
             return
         }
+        if (activeField != amount) && (activeField != reminder) {
+            return
+        }
         
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             keyboardHeight = keyboardSize.height
@@ -165,10 +168,12 @@ extension BookKeepingViewController {
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-        UIView.animate(withDuration: 0.3) {
-            self.constraintContentHeight.constant -= self.keyboardHeight
+        if (activeField == amount) || (activeField == reminder) {
+            UIView.animate(withDuration: 0.3) {
+                self.constraintContentHeight.constant -= self.keyboardHeight
+                self.scrollView.contentOffset = self.lastOffset
+            }
             
-            self.scrollView.contentOffset = self.lastOffset
         }
         
         keyboardHeight = nil
