@@ -15,7 +15,7 @@ class StaticsBarChartViewTotalSpendingController: UIViewController,ChartViewDele
     let context = AppDelegate.viewContext
     var costs = [Cost]()
     var dates = [Date]()
-    
+    //MYTODO: fix the barcharts setting
     override func viewDidLoad() {
         super.viewDidLoad()
         barChartView.delegate = self
