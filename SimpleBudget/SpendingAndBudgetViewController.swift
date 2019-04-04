@@ -12,7 +12,7 @@ import CoreData
 class SpendingAndBudgetViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITabBarControllerDelegate,UIPickerViewDataSource,UIPickerViewDelegate {
 
     
-    
+    //MYTODO: Everyday calculate each categories how much can be spend daily for the rest of the day of the month
     
     
     //MARK: - Properties

@@ -786,7 +786,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LeQ-5k-gzx"/>
                     </view>
-                    <navigationItem key="navigationItem" id="3cl-lW-QKG"/>
+                    <navigationItem key="navigationItem" title="Monthly Total Spending" id="3cl-lW-QKG"/>
                     <connections>
                         <outlet property="barChartView" destination="7ST-Rt-vKP" id="Y9t-UF-WMg"/>
                     </connections>

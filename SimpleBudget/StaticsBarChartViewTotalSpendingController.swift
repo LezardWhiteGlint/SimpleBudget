@@ -15,13 +15,14 @@ class StaticsBarChartViewTotalSpendingController: UIViewController,ChartViewDele
     let context = AppDelegate.viewContext
     var costs = [Cost]()
     var dates = [Date]()
-    //MYTODO: fix the barcharts setting
+    //MYTODO: bar is missing, try small x values
     override func viewDidLoad() {
         super.viewDidLoad()
         barChartView.delegate = self
         costs = loadCost()
         dates = loadDates(costs: costs)
         let data = barDataPreparation(dates: dates, costs: costs)
+        data.barWidth = 0.9
         barChartView.data = data
         let dateFormatterXAxis = ChartDateValueFormatter()
         barChartView.xAxis.valueFormatter = dateFormatterXAxis
@@ -83,10 +84,10 @@ class StaticsBarChartViewTotalSpendingController: UIViewController,ChartViewDele
     }
     
     private func barDataPreparation(dates:[Date],costs:[Cost]) -> BarChartData {
-        var costIntoSet = [ChartDataEntry]()
+        var costIntoSet = [BarChartDataEntry]()
         for date in dates{
             let costYAxis = perMonthCostsSum(dateToSum: date, costs: costs)
-            let costDataEntry = ChartDataEntry(x: Double(date.timeIntervalSince1970), y: costYAxis)
+            let costDataEntry = BarChartDataEntry(x: Double(date.timeIntervalSince1970), y: costYAxis)
             costIntoSet.append(costDataEntry)
         }
         let costSet = BarChartDataSet(values: costIntoSet, label: "Total Cost")

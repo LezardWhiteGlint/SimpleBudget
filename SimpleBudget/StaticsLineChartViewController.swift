@@ -11,7 +11,7 @@ import Charts
 import CoreData
 
 
-class StaticsLineChartViewController : UIViewController,ChartViewDelegate,IAxisValueFormatter {
+class StaticsLineChartViewController : UIViewController,ChartViewDelegate {
     @IBOutlet weak var lineChartView: LineChartView!
     let context = AppDelegate.viewContext
     var costs = [Cost]()
