@@ -16,6 +16,7 @@ class ChartDateValueFormatter:NSObject,IAxisValueFormatter {
     override init(){
         super.init()
 //        dateFormatter.dateFormat = "YYYY-MM"
+        dateFormatter.locale = Locale.current
         dateFormatter.timeStyle = .none
         dateFormatter.dateStyle = .short
     }

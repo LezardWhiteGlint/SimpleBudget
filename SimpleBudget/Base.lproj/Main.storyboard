@@ -446,7 +446,7 @@
         <!--Statics-->
         <scene sceneID="aq6-LF-qoo">
             <objects>
-                <viewController title="Statics" id="wHk-9o-4uO" userLabel="Statics" customClass="StaticsLineChartViewController" customModule="SimpleBudget" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Statics" id="wHk-9o-4uO" userLabel="Statics" customClass="StaticsLineChartMonthlySpendingAndBudgetViewController" customModule="SimpleBudget" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gDX-Gx-5Pc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -467,7 +467,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Monthly Total Spending and Budgets" id="z9O-SX-V8a"/>
                     <connections>
-                        <outlet property="lineChartView" destination="piK-gH-sPG" id="i5Y-ry-zeo"/>
+                        <outlet property="lineChartView" destination="piK-gH-sPG" id="dI4-kj-Rg5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hOq-tA-he3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -512,7 +512,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Monthly Total Spending" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gcp-XF-wex">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Yearly Total Spending and Budgets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gcp-XF-wex">
                                                     <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -522,7 +522,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="kAi-Ww-YEM" kind="show" id="lVR-RY-w4i"/>
+                                            <segue destination="kAi-Ww-YEM" kind="show" id="XVn-3g-R3z"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="njX-cj-aj2" style="IBUITableViewCellStyleDefault" id="jrF-ao-kS2">
@@ -767,12 +767,12 @@
         <!--Statics-->
         <scene sceneID="Mkp-af-fIn">
             <objects>
-                <viewController title="Statics" id="kAi-Ww-YEM" userLabel="Statics" customClass="StaticsBarChartViewTotalSpendingController" customModule="SimpleBudget" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Statics" id="kAi-Ww-YEM" userLabel="Statics" customClass="StaticsLineChartYearlySpendingAndBudgetViewController" customModule="SimpleBudget" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4G4-z6-7Ho">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ST-Rt-vKP" customClass="BarChartView" customModule="Charts">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ST-Rt-vKP" customClass="LineChartView" customModule="Charts">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -786,9 +786,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LeQ-5k-gzx"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Monthly Total Spending" id="3cl-lW-QKG"/>
+                    <navigationItem key="navigationItem" title="Yearly Total Spending and Budgets" id="3cl-lW-QKG"/>
                     <connections>
-                        <outlet property="barChartView" destination="7ST-Rt-vKP" id="Y9t-UF-WMg"/>
+                        <outlet property="lineChartView" destination="7ST-Rt-vKP" id="Z3M-QR-fvb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gOQ-lN-OcM" userLabel="First Responder" sceneMemberID="firstResponder"/>

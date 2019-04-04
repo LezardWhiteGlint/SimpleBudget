@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/lezardvaleth/Documents/Xcode/SimpleBudget/SimpleBudget/StaticsLineChartYearlySpendingAndBudgetViewController.swift">
+   </FileRef>
+   <FileRef
       location = "group:SimpleBudget.xcodeproj">
    </FileRef>
    <FileRef
