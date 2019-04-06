@@ -798,7 +798,7 @@
             </objects>
             <point key="canvasLocation" x="1905" y="1413"/>
         </scene>
-        <!--Statics Line Chart Daily Spending-->
+        <!--Daily Spending-->
         <scene sceneID="6No-Th-hBq">
             <objects>
                 <viewController id="MkP-6Y-Z63" customClass="StaticsLineChartDailySpending" customModule="SimpleBudget" customModuleProvider="target" sceneMemberID="viewController">
@@ -820,6 +820,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0z8-PK-Zox"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Daily Spending" id="RrV-ze-QtN"/>
                     <connections>
                         <outlet property="lineChartView" destination="L7Z-k5-YWq" id="hNB-15-YqF"/>
                     </connections>

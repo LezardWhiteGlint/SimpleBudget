@@ -299,13 +299,16 @@
 				TargetAttributes = {
 					F9160C80221531B300E28C71 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					F9160C96221531B400E28C71 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = F9160C80221531B300E28C71;
 					};
 					F9160CA1221531B400E28C71 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = F9160C80221531B300E28C71;
 					};
 				};
@@ -657,7 +660,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Lezardvaleth.SimpleBudget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -676,7 +679,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Lezardvaleth.SimpleBudget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -697,7 +700,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Lezardvaleth.SimpleBudgetTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleBudget.app/SimpleBudget";
 			};
@@ -719,7 +722,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Lezardvaleth.SimpleBudgetTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleBudget.app/SimpleBudget";
 			};
@@ -740,7 +743,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Lezardvaleth.SimpleBudgetUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = SimpleBudget;
 			};
@@ -761,7 +764,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Lezardvaleth.SimpleBudgetUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = SimpleBudget;
 			};
