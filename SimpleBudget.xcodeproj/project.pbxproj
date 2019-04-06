@@ -28,6 +28,7 @@
 		F93ACFA52219585B005DBAFD /* Cost.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93ACFA32219585B005DBAFD /* Cost.swift */; };
 		F93E9A5A222678320086248F /* BudgetSummaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93E9A59222678320086248F /* BudgetSummaryTableViewController.swift */; };
 		F9432CAA2255D7740068A252 /* StaticsLineChartYearlySpendingAndBudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9432CA92255D7740068A252 /* StaticsLineChartYearlySpendingAndBudgetViewController.swift */; };
+		F998CADC22587CAF00A51FCA /* StaticsLineChartDaliySpending.swift in Sources */ = {isa = PBXBuildFile; fileRef = F998CADB22587CAF00A51FCA /* StaticsLineChartDaliySpending.swift */; };
 		F99DB8BE22211DB30082F141 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99DB8BD22211DB30082F141 /* Budget.swift */; };
 		F99DB8C022212DD00082F141 /* SpendingAndBudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99DB8BF22212DD00082F141 /* SpendingAndBudgetTableViewCell.swift */; };
 		F9FBB7B6222BB96C00574E76 /* CostsDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FBB7B5222BB96C00574E76 /* CostsDetailsTableViewController.swift */; };
@@ -87,6 +88,7 @@
 		F93ACFA32219585B005DBAFD /* Cost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cost.swift; sourceTree = "<group>"; };
 		F93E9A59222678320086248F /* BudgetSummaryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetSummaryTableViewController.swift; sourceTree = "<group>"; };
 		F9432CA92255D7740068A252 /* StaticsLineChartYearlySpendingAndBudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StaticsLineChartYearlySpendingAndBudgetViewController.swift; path = /Users/lezardvaleth/Documents/Xcode/SimpleBudget/SimpleBudget/StaticsLineChartYearlySpendingAndBudgetViewController.swift; sourceTree = "<absolute>"; };
+		F998CADB22587CAF00A51FCA /* StaticsLineChartDaliySpending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticsLineChartDaliySpending.swift; sourceTree = "<group>"; };
 		F99DB8BD22211DB30082F141 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 		F99DB8BF22212DD00082F141 /* SpendingAndBudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingAndBudgetTableViewCell.swift; sourceTree = "<group>"; };
 		F9FBB7B5222BB96C00574E76 /* CostsDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostsDetailsTableViewController.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				F9FBB7B9222E76A700574E76 /* BudgetDetailsTableViewCell.swift */,
 				F9366BE42238A34200DA2761 /* StaticsLineChartMonthlySpendingAndBudgetViewController.swift */,
 				F9432CA92255D7740068A252 /* StaticsLineChartYearlySpendingAndBudgetViewController.swift */,
+				F998CADB22587CAF00A51FCA /* StaticsLineChartDaliySpending.swift */,
 				F9366BE72239FA4B00DA2761 /* ChartDateValueFormatter.swift */,
 				F93ACFA32219585B005DBAFD /* Cost.swift */,
 				F99DB8BD22211DB30082F141 /* Budget.swift */,
@@ -468,6 +471,7 @@
 				F9160CB52215487D00E28C71 /* StaticViewController.swift in Sources */,
 				F99DB8BE22211DB30082F141 /* Budget.swift in Sources */,
 				F9160C87221531B300E28C71 /* BookKeepingViewController.swift in Sources */,
+				F998CADC22587CAF00A51FCA /* StaticsLineChartDaliySpending.swift in Sources */,
 				F9FBB7BC222E76BC00574E76 /* BudgetDetailsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

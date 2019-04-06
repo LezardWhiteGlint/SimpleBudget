@@ -46,9 +46,6 @@ class StaticsLineChartYearlySpendingAndBudgetViewController : UIViewController,C
         
     }
     
-    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-        return Date(timeIntervalSince1970: value).description
-    }
     
     private func loadCost() -> [Cost]{
         let request: NSFetchRequest<Cost> = Cost.fetchRequest()

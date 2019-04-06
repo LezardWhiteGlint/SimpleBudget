@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -446,7 +446,7 @@
         <!--Statics-->
         <scene sceneID="aq6-LF-qoo">
             <objects>
-                <viewController title="Statics" id="wHk-9o-4uO" userLabel="Statics" customClass="StaticsLineChartMonthlySpendingAndBudgetViewController" customModule="SimpleBudget" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Monthly Total Spending and Budgets" id="wHk-9o-4uO" userLabel="Statics" customClass="StaticsLineChartMonthlySpendingAndBudgetViewController" customModule="SimpleBudget" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gDX-Gx-5Pc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -541,6 +541,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="MkP-6Y-Z63" kind="show" id="uLe-ac-7vH"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -767,7 +770,7 @@
         <!--Statics-->
         <scene sceneID="Mkp-af-fIn">
             <objects>
-                <viewController title="Statics" id="kAi-Ww-YEM" userLabel="Statics" customClass="StaticsLineChartYearlySpendingAndBudgetViewController" customModule="SimpleBudget" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Yearly Total Spending and Budgets" id="kAi-Ww-YEM" userLabel="Statics" customClass="StaticsLineChartYearlySpendingAndBudgetViewController" customModule="SimpleBudget" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4G4-z6-7Ho">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -793,14 +796,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gOQ-lN-OcM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2822" y="1392"/>
+            <point key="canvasLocation" x="1905" y="1413"/>
+        </scene>
+        <!--Statics Line Chart Daily Spending-->
+        <scene sceneID="6No-Th-hBq">
+            <objects>
+                <viewController id="MkP-6Y-Z63" customClass="StaticsLineChartDailySpending" customModule="SimpleBudget" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uQW-XY-YO4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L7Z-k5-YWq" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0z8-PK-Zox" firstAttribute="bottom" secondItem="L7Z-k5-YWq" secondAttribute="bottom" id="BNa-Vl-hAh"/>
+                            <constraint firstItem="0z8-PK-Zox" firstAttribute="trailing" secondItem="L7Z-k5-YWq" secondAttribute="trailing" id="XQe-qz-eDn"/>
+                            <constraint firstItem="L7Z-k5-YWq" firstAttribute="leading" secondItem="0z8-PK-Zox" secondAttribute="leading" id="rhP-sa-JHB"/>
+                            <constraint firstItem="L7Z-k5-YWq" firstAttribute="top" secondItem="0z8-PK-Zox" secondAttribute="top" id="z3b-T6-ffq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0z8-PK-Zox"/>
+                    </view>
+                    <connections>
+                        <outlet property="lineChartView" destination="L7Z-k5-YWq" id="hNB-15-YqF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hjk-G9-SkV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2829.5999999999999" y="1410.0449775112445"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Bookkeeping" width="50" height="50"/>
-        <image name="Budgeting" width="38.400001525878906" height="38.400001525878906"/>
-        <image name="Setting" width="50" height="50"/>
-        <image name="Statics" width="50" height="50"/>
+        <image name="Bookkeeping" width="25" height="25"/>
+        <image name="Budgeting" width="20" height="20"/>
+        <image name="Setting" width="25" height="25"/>
+        <image name="Statics" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="xZC-eg-4Xo"/>
