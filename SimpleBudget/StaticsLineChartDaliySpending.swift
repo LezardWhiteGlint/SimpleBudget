@@ -99,7 +99,9 @@ class StaticsLineChartDailySpending : UIViewController,ChartViewDelegate {
         }
         let costSet = LineChartDataSet(values: costIntoSet, label: "Total Cost")
         costSet.setColor(.green)
-        print(costSet)
+        costSet.setCircleColor(.green)
+        costSet.circleRadius = 3
+        costSet.lineWidth = 2
         let output = LineChartData(dataSet: costSet)
         return output
     }

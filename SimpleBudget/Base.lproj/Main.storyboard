@@ -598,13 +598,7 @@
                             <outlet property="delegate" destination="DzY-Ue-RFQ" id="qsR-uH-gY1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Settings" id="jps-fL-JIX">
-                        <barButtonItem key="leftBarButtonItem" title="addBudgetSample" id="8jN-fp-VmV">
-                            <connections>
-                                <action selector="addBudgetSample:" destination="DzY-Ue-RFQ" id="ldv-7F-OXM"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Settings" id="jps-fL-JIX"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fGh-2d-ZhN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

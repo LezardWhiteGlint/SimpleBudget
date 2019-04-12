@@ -10,9 +10,9 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController {
     
-    @IBAction func addBudgetSample(_ sender: UIBarButtonItem) {
-        addSampleBudgetData()
-    }
+//    @IBAction func addBudgetSample(_ sender: UIBarButtonItem) {
+//        addSampleBudgetData()
+//    }
     
 
     override func viewDidLoad() {
@@ -32,14 +32,14 @@ class SettingsTableViewController: UITableViewController {
         return 1
     }
 
-    private func addSampleBudgetData() {
-        let context = AppDelegate.viewContext
-        let budget = Budget(context: context)
-        budget.amount = Double.random(in: 1000...10000)
-        budget.date = Date().addingTimeInterval(Double.random(in: 100000...100000000))
-        budget.category = String("qwertyuiopasdfghjklzxcvbnm1234567890".randomElement()!)
-        try? context.save()
-        
-    }
+//    private func addSampleBudgetData() {
+//        let context = AppDelegate.viewContext
+//        let budget = Budget(context: context)
+//        budget.amount = Double.random(in: 1000...10000)
+//        budget.date = Date().addingTimeInterval(Double.random(in: 100000...100000000))
+//        budget.category = String("qwertyuiopasdfghjklzxcvbnm1234567890".randomElement()!)
+//        try? context.save()
+//
+//    }
 
 }

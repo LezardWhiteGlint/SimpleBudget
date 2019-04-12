@@ -123,8 +123,14 @@ class StaticsLineChartMonthlySpendingAndBudgetViewController : UIViewController,
         }
         let costSet = LineChartDataSet(values: costIntoSet, label: "Total Cost")
         costSet.setColor(.green)
+        costSet.setCircleColor(.green)
+        costSet.circleRadius = 3
+        costSet.lineWidth = 2
         let budgetSet = LineChartDataSet(values: budgetIntoSet, label: "Total Budget")
         budgetSet.setColor(.red)
+        budgetSet.setCircleColor(.red)
+        budgetSet.circleRadius = 3
+        budgetSet.lineWidth = 2
         let output = LineChartData(dataSets: [costSet,budgetSet])
         return output
     }
