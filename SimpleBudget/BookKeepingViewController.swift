@@ -17,6 +17,8 @@ class BookKeepingViewController: UIViewController, UITextFieldDelegate, UIScroll
     @IBOutlet weak var category: UIPickerView!
     @IBOutlet weak var amount: UITextField!
     @IBOutlet weak var reminder: UITextField!
+    @IBOutlet weak var doneButton: UIButton!
+    
     //Category contents
     private var categoryPickerDataSource = [String]()
     
@@ -47,6 +49,10 @@ class BookKeepingViewController: UIViewController, UITextFieldDelegate, UIScroll
         }
         amount.delegate = self
         reminder.delegate = self
+        
+        //change doneButton shape
+        doneButton.clipsToBounds = true
+        doneButton.layer.cornerRadius = doneButton.frame.size.width / 4
         
         //Add keyboard observer
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
