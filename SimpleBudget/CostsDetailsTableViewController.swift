@@ -60,8 +60,8 @@ class CostsDetailsTableViewController: UITableViewController {
     //MARK: - UITableViewDelegates
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let reminder = costs[indexPath.row].reminder, reminder != "" {
-            let alert = UIAlertController(title: "Reminder", message: reminder, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil ))
+            let alert = UIAlertController(title: NSLocalizedString("Reminder", comment: ""), message: reminder, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil ))
             present(alert, animated: true, completion: nil)
         }
     }
