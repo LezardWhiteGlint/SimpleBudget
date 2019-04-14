@@ -94,6 +94,8 @@ class BookKeepingViewController: UIViewController, UITextFieldDelegate, UIScroll
                 fatalError("Context save failed")
             }
         }
+        amount.resignFirstResponder()
+        reminder.resignFirstResponder()
     }
     @IBAction func doneEditing(_ sender: UITapGestureRecognizer) {
         amount.resignFirstResponder()
