@@ -97,7 +97,7 @@ class StaticsLineChartDailySpending : UIViewController,ChartViewDelegate {
             let costDataEntry = ChartDataEntry(x: Double(date.timeIntervalSince1970), y: costYAxis)
             costIntoSet.append(costDataEntry)
         }
-        let costSet = LineChartDataSet(values: costIntoSet, label: "Total Cost")
+        let costSet = LineChartDataSet(values: costIntoSet, label: NSLocalizedString("Total Cost", comment: ""))
         costSet.setColor(.green)
         costSet.setCircleColor(.green)
         costSet.circleRadius = 3

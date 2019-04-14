@@ -19,6 +19,7 @@
 		F9160C9C221531B400E28C71 /* SimpleBudgetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9160C9B221531B400E28C71 /* SimpleBudgetTests.swift */; };
 		F9160CA7221531B400E28C71 /* SimpleBudgetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9160CA6221531B400E28C71 /* SimpleBudgetUITests.swift */; };
 		F9160CB52215487D00E28C71 /* StaticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9160CB42215487D00E28C71 /* StaticViewController.swift */; };
+		F92E47B52262C2EA007BAC24 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F92E47B32262C2EA007BAC24 /* Localizable.strings */; };
 		F9350D01222279730078CC3E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9350D00222279720078CC3E /* Category.swift */; };
 		F9350D0322227F840078CC3E /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9350D0222227F840078CC3E /* SettingsTableViewController.swift */; };
 		F9350D0522227FC30078CC3E /* CategoriesSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9350D0422227FC30078CC3E /* CategoriesSettingTableViewController.swift */; };
@@ -79,6 +80,10 @@
 		F9160CA6221531B400E28C71 /* SimpleBudgetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleBudgetUITests.swift; sourceTree = "<group>"; };
 		F9160CA8221531B400E28C71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9160CB42215487D00E28C71 /* StaticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticViewController.swift; sourceTree = "<group>"; };
+		F92E47AD2262C0EF007BAC24 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		F92E47AE2262C0EF007BAC24 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		F92E47B42262C2EA007BAC24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = SimpleBudget/Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F92E47B62262C32F007BAC24 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "SimpleBudget/zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F9350D00222279720078CC3E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		F9350D0222227F840078CC3E /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		F9350D0422227FC30078CC3E /* CategoriesSettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesSettingTableViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +200,7 @@
 				F9160C8D221531B400E28C71 /* Assets.xcassets */,
 				F9160C92221531B400E28C71 /* Info.plist */,
 				F93ACF6122194845005DBAFD /* CoreDataFile.xcdatamodeld */,
+				F92E47B32262C2EA007BAC24 /* Localizable.strings */,
 				F93AC03F222102A90040AFD8 /* Supporting Files */,
 			);
 			path = SimpleBudget;
@@ -320,6 +326,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = F9160C78221531B300E28C71;
 			productRefGroup = F9160C82221531B300E28C71 /* Products */;
@@ -339,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9160C91221531B400E28C71 /* LaunchScreen.storyboard in Resources */,
+				F92E47B52262C2EA007BAC24 /* Localizable.strings in Resources */,
 				F9160C8E221531B400E28C71 /* Assets.xcassets in Resources */,
 				F9160C8C221531B300E28C71 /* Main.storyboard in Resources */,
 			);
@@ -515,6 +523,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F9160C8B221531B300E28C71 /* Base */,
+				F92E47AD2262C0EF007BAC24 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -523,8 +532,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				F9160C90221531B400E28C71 /* Base */,
+				F92E47AE2262C0EF007BAC24 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F92E47B32262C2EA007BAC24 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F92E47B42262C2EA007BAC24 /* Base */,
+				F92E47B62262C32F007BAC24 /* zh-Hans */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -534,6 +553,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -595,6 +615,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

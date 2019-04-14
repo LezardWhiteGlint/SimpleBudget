@@ -45,6 +45,10 @@ class SpendingAndBudgetViewController: UIViewController,UITableViewDelegate,UITa
         return budgets.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 40
+    }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SpendingBudgetCell", for: indexPath)

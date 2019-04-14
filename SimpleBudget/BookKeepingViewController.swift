@@ -33,7 +33,7 @@ class BookKeepingViewController: UIViewController, UITextFieldDelegate, UIScroll
         categoryPickerDataSource = loadCategories()
         //Set initial categories
         if categoryPickerDataSource == [] {
-            categoryPickerDataSource = ["Housing","Food","Shopping","Other"]
+            categoryPickerDataSource = [NSLocalizedString("Housing", comment: ""),NSLocalizedString("Food", comment: ""),NSLocalizedString("Shopping", comment: ""),NSLocalizedString("Other", comment: "")]
             var orderToRemember = 1
             for eachCategory in categoryPickerDataSource {
                 let category = Category(context: context)

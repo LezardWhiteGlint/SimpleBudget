@@ -1,0 +1,123 @@
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "1OB-WZ-z7a"; */
+"1OB-WZ-z7a.title" = "返回";
+
+/* Class = "UINavigationItem"; title = "Yearly Total Spending and Budgets"; ObjectID = "3cl-lW-QKG"; */
+"3cl-lW-QKG.title" = "年度总消费与预算";
+
+/* Class = "UINavigationItem"; title = "New Budget Month Add"; ObjectID = "5H3-h3-RcW"; */
+"5H3-h3-RcW.title" = "增加新的月度预算";
+
+/* Class = "UILabel"; accessibilityLabel = "类别"; ObjectID = "6cU-Ma-OgL"; */
+"6cU-Ma-OgL.accessibilityLabel" = "类别";
+
+/* Class = "UILabel"; text = "类别"; ObjectID = "6cU-Ma-OgL"; */
+"6cU-Ma-OgL.text" = "消费类别";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "Ag6-OY-upY"; */
+"Ag6-OY-upY.text" = "详细";
+
+/* Class = "UINavigationItem"; title = "Budget Summary"; ObjectID = "BlZ-6V-yHO"; */
+"BlZ-6V-yHO.title" = "预算汇总";
+
+/* Class = "UILabel"; text = "消费类别设定"; ObjectID = "DMs-qs-HjW"; */
+"DMs-qs-HjW.text" = "消费类别设定";
+
+/* Class = "UITableViewController"; title = "设置"; ObjectID = "DzY-Ue-RFQ"; */
+"DzY-Ue-RFQ.title" = "设置";
+
+/* Class = "UILabel"; text = "Yearly Total Spending and Budgets"; ObjectID = "Gcp-XF-wex"; */
+"Gcp-XF-wex.text" = "年度总消费与预算";
+
+/* Class = "UINavigationItem"; title = "Spending & Budget"; ObjectID = "Mpa-q8-Jhl"; */
+"Mpa-q8-Jhl.title" = "消费与预算";
+
+/* Class = "UILabel"; text = "类别"; ObjectID = "NKw-im-bsY"; */
+"NKw-im-bsY.text" = "类别";
+
+/* Class = "UILabel"; text = "类别"; ObjectID = "OBi-hc-wJm"; */
+"OBi-hc-wJm.text" = "类别";
+
+/* Class = "UITabBarItem"; title = "设置"; ObjectID = "OPk-vx-gFa"; */
+"OPk-vx-gFa.title" = "设置";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "Qya-34-fKN"; */
+"Qya-34-fKN.text" = "";
+
+/* Class = "UINavigationItem"; title = "单日消费"; ObjectID = "RrV-ze-QtN"; */
+"RrV-ze-QtN.title" = "单日消费";
+
+/* Class = "UITabBarItem"; title = "Statistics"; ObjectID = "UbK-cY-TBf"; */
+"UbK-cY-TBf.title" = "统计";
+
+/* Class = "UILabel"; text = "类别"; ObjectID = "Wea-rF-mIJ"; */
+"Wea-rF-mIJ.text" = "类别";
+
+/* Class = "UILabel"; text = "Difference"; ObjectID = "Z9Z-QB-yOi"; */
+"Z9Z-QB-yOi.text" = "差值";
+
+/* Class = "UITabBarItem"; title = "Bookkeeping"; ObjectID = "acW-dT-cKf"; */
+"acW-dT-cKf.title" = "记账";
+
+/* Class = "UILabel"; text = "Reminder"; ObjectID = "beh-RV-7J4"; */
+"beh-RV-7J4.text" = "备注";
+
+/* Class = "UITabBarItem"; title = "Budget"; ObjectID = "cPa-gy-q4n"; */
+"cPa-gy-q4n.title" = "预算";
+
+/* Class = "UILabel"; text = "Budget"; ObjectID = "dsM-fl-b6s"; */
+"dsM-fl-b6s.text" = "预算";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "gdW-gV-bma"; */
+"gdW-gV-bma.title" = "返回";
+
+/* Class = "UINavigationItem"; title = "Costs Details"; ObjectID = "jBf-Wy-zKI"; */
+"jBf-Wy-zKI.title" = "详细消费";
+
+/* Class = "UINavigationItem"; title = "设置"; ObjectID = "jps-fL-JIX"; */
+"jps-fL-JIX.title" = "设置";
+
+/* Class = "UIViewController"; title = "Yearly Total Spending and Budgets"; ObjectID = "kAi-Ww-YEM"; */
+"kAi-Ww-YEM.title" = "年度总消费与预算";
+
+/* Class = "UILabel"; text = "Cost"; ObjectID = "mIn-rP-QnJ"; */
+"mIn-rP-QnJ.text" = "消费";
+
+/* Class = "UILabel"; text = "Amount"; ObjectID = "mfo-Bu-8Z4"; */
+"mfo-Bu-8Z4.text" = "消费额度";
+
+/* Class = "UITableViewController"; title = "消费类别设定"; ObjectID = "nAd-CX-Qdw"; */
+"nAd-CX-Qdw.title" = "消费类别设定";
+
+/* Class = "UINavigationItem"; title = "消费类别设定"; ObjectID = "nVe-mN-Cwh"; */
+"nVe-mN-Cwh.title" = "消费类别设定";
+
+/* Class = "UILabel"; text = "单日消费"; ObjectID = "njX-cj-aj2"; */
+"njX-cj-aj2.text" = "单日消费";
+
+/* Class = "UILabel"; text = "Difference"; ObjectID = "nwa-DB-0ft"; */
+"nwa-DB-0ft.text" = "差值";
+
+/* Class = "UILabel"; text = "Budget"; ObjectID = "pOG-5c-uXo"; */
+"pOG-5c-uXo.text" = "预算";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "sSw-bw-R4H"; */
+"sSw-bw-R4H.normalTitle" = "记账";
+
+/* Class = "UINavigationItem"; title = "Budget Detail"; ObjectID = "vqG-Ho-A0L"; */
+"vqG-Ho-A0L.title" = "详细预算";
+
+/* Class = "UIViewController"; title = "月度总消费与预算"; ObjectID = "wHk-9o-4uO"; */
+"wHk-9o-4uO.title" = "月度总消费与预算";
+
+/* Class = "UILabel"; text = "Monthly Total Spendings and Budgets"; ObjectID = "yad-HT-2ZA"; */
+"yad-HT-2ZA.text" = "月度总消费与预算";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "yrQ-HL-XMt"; */
+"yrQ-HL-XMt.text" = "";
+
+/* Class = "UINavigationItem"; title = "月度总消费与预算"; ObjectID = "z9O-SX-V8a"; */
+"z9O-SX-V8a.title" = "月度总消费与预算";
+
+/* Class = "UILabel"; text = "Cost"; ObjectID = "zEl-gv-8J7"; */
+"zEl-gv-8J7.text" = "消费";

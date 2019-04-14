@@ -125,12 +125,12 @@ class StaticsLineChartYearlySpendingAndBudgetViewController : UIViewController,C
             costIntoSet.append(costDataEntry)
             budgetIntoSet.append(budgetDateEntry)
         }
-        let costSet = LineChartDataSet(values: costIntoSet, label: "Total Cost")
+        let costSet = LineChartDataSet(values: costIntoSet, label: NSLocalizedString("Total Cost", comment: ""))
         costSet.setColor(.green)
         costSet.setCircleColor(.green)
         costSet.circleRadius = 3
         costSet.lineWidth = 2
-        let budgetSet = LineChartDataSet(values: budgetIntoSet, label: "Total Budget")
+        let budgetSet = LineChartDataSet(values: budgetIntoSet, label: NSLocalizedString("Total Budget", comment: ""))
         budgetSet.setColor(.red)
         budgetSet.setCircleColor(.red)
         budgetSet.circleRadius = 3

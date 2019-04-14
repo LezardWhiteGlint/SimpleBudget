@@ -32,6 +32,10 @@ class BudgetDetailsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return budgets.count
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 40
+    }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -87,11 +91,14 @@ class BudgetDetailsTableViewController: UITableViewController {
             row += 1
             indexPath = IndexPath(row: row, section: 0)
         }
-        let alert = UIAlertController(title: "Budgets Save", message: "Amounts Saved successfully", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        let alert = UIAlertController(title: NSLocalizedString("Budgets Save", comment: ""), message: NSLocalizedString("Amounts Saved successfully", comment: "") , preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: {_ in self.navigationController?.popToRootViewController(animated: true)}))
         present(alert, animated: true, completion: nil)
         
+        
     }
+    
     
     
 

@@ -84,7 +84,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sSw-bw-R4H">
-                                                        <rect key="frame" x="8" y="404" width="359" height="194"/>
+                                                        <rect key="frame" x="30" y="404" width="315" height="194"/>
                                                         <color key="backgroundColor" red="0.045638598435271231" green="0.86583144430000003" blue="0.020610257640721445" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                         <state key="normal" title="Done">
@@ -97,11 +97,11 @@
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="uHx-6F-3Ce" firstAttribute="leading" secondItem="2k2-OM-kHY" secondAttribute="leading" constant="8" id="1nc-pm-PP5"/>
-                                                    <constraint firstItem="sSw-bw-R4H" firstAttribute="leading" secondItem="2k2-OM-kHY" secondAttribute="leading" constant="8" id="H9T-cU-cmf"/>
+                                                    <constraint firstItem="sSw-bw-R4H" firstAttribute="leading" secondItem="2k2-OM-kHY" secondAttribute="leading" constant="30" id="H9T-cU-cmf"/>
                                                     <constraint firstAttribute="trailing" secondItem="uHx-6F-3Ce" secondAttribute="trailing" constant="8" id="Rj0-0A-PsI"/>
-                                                    <constraint firstItem="sSw-bw-R4H" firstAttribute="top" secondItem="uHx-6F-3Ce" secondAttribute="bottom" constant="8" id="ThL-QX-jag"/>
+                                                    <constraint firstItem="sSw-bw-R4H" firstAttribute="top" secondItem="uHx-6F-3Ce" secondAttribute="bottom" constant="30" id="ThL-QX-jag"/>
                                                     <constraint firstItem="uHx-6F-3Ce" firstAttribute="top" secondItem="nPe-30-lVh" secondAttribute="bottom" constant="8" id="ZfF-UW-PdV"/>
-                                                    <constraint firstAttribute="trailing" secondItem="sSw-bw-R4H" secondAttribute="trailing" constant="8" id="u37-oI-Yox"/>
+                                                    <constraint firstAttribute="trailing" secondItem="sSw-bw-R4H" secondAttribute="trailing" constant="30" id="u37-oI-Yox"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
@@ -834,6 +834,6 @@
         <image name="Statics" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xZC-eg-4Xo"/>
+        <segue reference="HMo-3Z-o7u"/>
     </inferredMetricsTieBreakers>
 </document>
