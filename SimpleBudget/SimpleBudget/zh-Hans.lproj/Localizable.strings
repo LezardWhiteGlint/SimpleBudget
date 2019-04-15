@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  SimpleBudget
+
+  Created by Lezardvaleth on 2019/4/14.
+  Copyright © 2019 Lezardvaleth. All rights reserved.
+*/
+
+"OK" = "好的";
+"Budgets Saved" = "预算已保存";
+"Amounts Saved successfully" = "预算保存成功";
+"Housing" = "房屋";
+"Food" = "食物";
+"Shopping" = "购物";
+"Other" = "其他";
+"Total Cost" = "总消费";
+"Total Budget" = "总预算";
+"Reminder" = "备注";
+"Add Category" = "增加消费类别";

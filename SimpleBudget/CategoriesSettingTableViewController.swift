@@ -42,9 +42,9 @@ class CategoriesSettingTableViewController: UITableViewController {
     
     //MARK: - Actions
     @IBAction func addCategories(_ sender: UIBarButtonItem) {
-        let alert = UIAlertController(title: "test", message: "message test", preferredStyle: .alert)
+        let alert = UIAlertController(title: NSLocalizedString("Add Category", comment: ""), message: "", preferredStyle: .alert)
         alert.addTextField(configurationHandler: nil)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in self.addCategory(name: alert.textFields![0].text!) } ))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: { _ in self.addCategory(name: alert.textFields![0].text!) } ))
         present(alert, animated: true, completion: nil)
     }
     

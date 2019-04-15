@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  SimpleBudget
+
+  Created by Lezardvaleth on 2019/4/14.
+  Copyright © 2019 Lezardvaleth. All rights reserved.
+*/
+
+"OK" = "OK";
+"Budgets Save" = "Budgets Save";
+"Amounts Saved successfully" = "Amounts Saved successfully";
+"Housing" = "Housing";
+"Food" = "Food";
+"Shopping" = "Shopping";
+"Other" = "Other";
+"Total Cost" = "Total Cost";
+"Total Budget" = "Total Budget";
+"Reminder" = "Reminder";
+"Add Category" = "Add Category";
+

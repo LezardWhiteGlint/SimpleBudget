@@ -92,7 +92,7 @@ class BudgetDetailsTableViewController: UITableViewController {
             indexPath = IndexPath(row: row, section: 0)
         }
         
-        let alert = UIAlertController(title: NSLocalizedString("Budgets Save", comment: ""), message: NSLocalizedString("Amounts Saved successfully", comment: "") , preferredStyle: .alert)
+        let alert = UIAlertController(title: NSLocalizedString("Budgets Saved", comment: ""), message: NSLocalizedString("", comment: "") , preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: {_ in self.navigationController?.popToRootViewController(animated: true)}))
         present(alert, animated: true, completion: nil)
         
