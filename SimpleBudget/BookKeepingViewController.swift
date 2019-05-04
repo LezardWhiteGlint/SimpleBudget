@@ -54,12 +54,16 @@ class BookKeepingViewController: UIViewController, UITextFieldDelegate, UIScroll
         doneButton.clipsToBounds = true
         doneButton.layer.cornerRadius = doneButton.frame.size.width / 4
         
+        //Add datepicker changing observer
+        NotificationCenter.default.addObserver(self, selector: #selector(setDatePickerToday), name: UIApplication.willEnterForegroundNotification, object: nil)
+        
         //Add keyboard observer
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     //MARK: Delegations
+    
     
     //MARK: - UIPickerView Delegates
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -77,6 +81,9 @@ class BookKeepingViewController: UIViewController, UITextFieldDelegate, UIScroll
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         updateCategory()
     }
+    
+    
+    
     
     //MARK: Actions
     @IBAction func Done(_ sender: Any) {
@@ -119,6 +126,11 @@ class BookKeepingViewController: UIViewController, UITextFieldDelegate, UIScroll
         }
         return categories
     }
+    
+    @objc private func setDatePickerToday() {
+        date.date = Date()
+    }
+    
     
     // sroll up when keyboard show
     var activeField: UITextField?
