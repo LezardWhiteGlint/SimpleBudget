@@ -13,6 +13,9 @@ class SettingsTableViewController: UITableViewController {
 //    @IBAction func addBudgetSample(_ sender: UIBarButtonItem) {
 //        addSampleBudgetData()
 //    }
+//    @IBAction func costMockDataInput(_ sender: Any) {
+//        testAddSampleCostData(costCount: 180)
+//    }
     
 
     override func viewDidLoad() {
@@ -31,6 +34,18 @@ class SettingsTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 1
     }
+    
+//    private func testAddSampleCostData(costCount:Int) {
+//        let context = AppDelegate.viewContext
+//        for count in 0...costCount {
+//            let cost = Cost(context: context)
+//            cost.amount = Double.random(in: 100...10000)
+//            cost.date = Date().addingTimeInterval(-86400*Double(count))
+//            cost.category = "testOnly"
+//            try? context.save()
+//        }
+//        
+//    }
 
 //    private func addSampleBudgetData() {
 //        let context = AppDelegate.viewContext

@@ -45,7 +45,7 @@
 "Qya-34-fKN.text" = "";
 
 /* Class = "UINavigationItem"; title = "单日消费"; ObjectID = "RrV-ze-QtN"; */
-"RrV-ze-QtN.title" = "单日消费";
+"RrV-ze-QtN.title" = "近30日消费";
 
 /* Class = "UITabBarItem"; title = "Statistics"; ObjectID = "UbK-cY-TBf"; */
 "UbK-cY-TBf.title" = "统计";
@@ -93,7 +93,7 @@
 "nVe-mN-Cwh.title" = "消费类别设定";
 
 /* Class = "UILabel"; text = "单日消费"; ObjectID = "njX-cj-aj2"; */
-"njX-cj-aj2.text" = "单日消费";
+"njX-cj-aj2.text" = "近30日消费";
 
 /* Class = "UILabel"; text = "Difference"; ObjectID = "nwa-DB-0ft"; */
 "nwa-DB-0ft.text" = "差值";

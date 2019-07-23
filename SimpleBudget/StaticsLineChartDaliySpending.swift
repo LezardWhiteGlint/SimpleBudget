@@ -10,7 +10,7 @@ import Foundation
 import Charts
 import CoreData
 
-class StaticsLineChartDailySpending : UIViewController,ChartViewDelegate {
+class StaticsLineChartRecentThirtyDaysSpending : UIViewController,ChartViewDelegate {
     @IBOutlet weak var lineChartView: LineChartView!
     let context = AppDelegate.viewContext
     var costs = [Cost]()
@@ -40,11 +40,16 @@ class StaticsLineChartDailySpending : UIViewController,ChartViewDelegate {
         
     }
     
+    //MYTODO: get data directly from coredata instead of load it into list
     
     private func loadCost() -> [Cost]{
+        // use canlendar to get recent 30 days
+        var canlendar = Calendar.current
+        canlendar.timeZone = NSTimeZone.local
+        let thirtyDaysBefore = canlendar.date(byAdding: .day,value: -30, to: Date())
         let request: NSFetchRequest<Cost> = Cost.fetchRequest()
-                request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true)]
-        //        request.predicate = NSPredicate(format: "amount > %@", "0")
+        request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true)]
+        request.predicate = NSPredicate(format: "date > %@", thirtyDaysBefore! as NSDate)
         //        let context = AppDelegate.viewContext
         var returnCosts = [Cost]()
         let result = try? context.fetch(request)
@@ -105,6 +110,25 @@ class StaticsLineChartDailySpending : UIViewController,ChartViewDelegate {
         let output = LineChartData(dataSet: costSet)
         return output
     }
+    
+//    private func sixtyDaysDataLimitProcessor() {
+//        if let last = allDates.last {
+//            if let lastIndex = allDates.lastIndex(of: last) {
+//                let firstIndex = lastIndex - 59
+//                print(firstIndex)
+//                print(lastIndex)
+//                if firstIndex >= 0 {
+//                    print(allCosts.count)
+//                    print(allDates.count)
+//                    costs = Array(allCosts[firstIndex...lastIndex])
+//                    dates = Array(allDates[firstIndex...lastIndex])
+//                }else{
+//                    costs = allCosts
+//                    dates = allDates
+//                }
+//            }
+//        }
+//    }
     
     
     
